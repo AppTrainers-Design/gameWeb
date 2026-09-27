@@ -44,11 +44,13 @@ A Jordan-only scope. Studios, publishers, indie developers, and game-development
 - Headline figures: 15+ gaming companies, 250+ indie developers, and 300+ published games. The source marked each figure with an asterisk but published no footnote.
 - Logos are cropped into 240px tiles in `assets/logos/` and belong to their companies.
 - The source has no cities, events, jobs, company descriptions, or game catalogue. None of these may be invented.
+- On 2026-09-27 the user asked for listing pages carrying all the data of a gamecompanies.com company profile (their example: 22cans), in this site's design. Profiles (tagline, About, games, company size, headquarters and address, people, platforms, social links) were researched from public sources (company sites, app stores, Steam, itch.io, press and business directories) and live in `js/profiles.js`, with each entry's main sources in a comment. Where nothing could be confirmed, the field is left out: Rasheed Games, Twin Power and Zenix Studio have no profile yet.
+- Known discrepancies with public sources: business directories give Kenda AI's founding year as 2021 and Chick Mania's as 2016 (one says 2017); the directory keeps its source's years (2024 and 2017).
 - Known source discrepancy: one indie studio was listed as "Rice Dice", but its logo and URL (risedice.github.io) say "Rise Dice". The page uses "Rise Dice".
 
 ## Product Principles
 
-1. Every listing and figure traces back to the source. Companies, jobs, events, and claims are never invented.
+1. Every listing and figure traces back to the source, and every profile fact to a public source. Companies, jobs, events, and claims are never invented.
 2. The page stays faithful to the reference layout but keeps its own name and mark.
 3. Each listing is one click from its own page on the site, and its website is one click from that page.
 4. The data is kept separate from the page, so real updates never touch markup.
