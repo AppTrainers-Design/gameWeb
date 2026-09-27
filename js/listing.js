@@ -1,11 +1,13 @@
-// Jordan Game Companies: one listing's own page (listing.html?id=<slug>), built from js/data.js.
-// Laid out like a company profile: breadcrumb, logo, name and type, About, and an information column. Every sentence is assembled from the listing's own fields; nothing is written per company.
+// Jordan Game Companies: one listing's own page (listing.html?id=<slug>), built from js/data.js and js/profiles.js.
+// Laid out like a company profile: breadcrumb, logo, name and tagline, About, Games, and an information column
+// with the listing's facts, people, address and social links. Sections the listing has no data for are left out.
 (function () {
   'use strict';
 
   const J = window.JGC;
   if (!J) return;
   const { D, $, byName, esc, logoSrc, listingHref, findListing, typeLabel, cardHTML } = J;
+  const PROFILES = window.JGC_PROFILES || {};
 
   const GROUP = {
     studios: { title: 'Studios & publishers', label: 'studios & publishers' },
@@ -13,7 +15,26 @@
     universities: { title: 'Universities', label: 'universities' },
   };
   const MORE = 6;
+  const GAMES = 6; // games shown before "Show all", once there are more than GAMES_ALL
+  const GAMES_ALL = 8;
   const EXT = '<svg aria-hidden="true"><use href="#i-ext"/></svg><span class="vh"> (opens in a new tab)</span>';
+  const SOCIAL = {
+    instagram: 'Instagram',
+    x: 'X',
+    facebook: 'Facebook',
+    linkedin: 'LinkedIn',
+    youtube: 'YouTube',
+    steam: 'Steam',
+    itch: 'itch.io',
+    github: 'GitHub',
+    behance: 'Behance',
+  };
+  const STORES = [
+    [/(^|\.)play\.google\.com$/, 'Google Play'],
+    [/(^|\.)apps\.apple\.com$/, 'the App Store'],
+    [/(^|\.)steampowered\.com$/, 'Steam'],
+    [/(^|\.)itch\.io$/, 'itch.io'],
+  ];
 
   const slug = new URLSearchParams(location.search).get('id') || '';
   const found = findListing(slug);
@@ -24,12 +45,18 @@
   const isDomain = (site) => Boolean(site && site.includes('.'));
   const where = (it) => (isDomain(it.site) ? it.site : host(it.url));
   const breakable = (s) => esc(s).replace(/([.-])/g, '$1<wbr>');
+  const store = (url) => {
+    const h = host(url);
+    const hit = STORES.find(([re]) => re.test(h));
+    return hit ? hit[1] : h;
+  };
+  const place = (p) => (p.city ? `${p.city}, Jordan` : 'Jordan');
+  const mapHref = (address) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${address}, Jordan`)}`;
 
   /* ───────── What the listing is, in words built from its own data ───────── */
 
-  // Where a studio stands among the directory's studios: the one thing the head and the information panel don't say.
-  // Other listings get no About section until a description is added for them.
-  function about(tab, it) {
+  // Where a studio stands among the directory's studios; it closes the studio's About.
+  function standing(tab, it) {
     if (tab !== 'studios') return '';
     const same = D.studios.filter((s) => s !== it && s.founded === it.founded).sort(byName);
     if (same.length) {
@@ -42,24 +69,57 @@
     return `${esc(it.name)} is the only studio in the directory founded in ${it.founded}.`;
   }
 
-  const metaParts = (tab, it) => {
-    if (tab === 'studios') return [typeLabel(it), `Founded ${it.founded}`, 'Jordan'];
-    if (tab === 'indies') return ['Indie developer', 'Jordan'];
-    return [it.kind, 'Jordan'];
+  const metaParts = (tab, it, p) => {
+    if (tab === 'studios') return [typeLabel(it), `Founded ${it.founded}`, place(p)];
+    if (tab === 'indies') return ['Indie developer', place(p)];
+    return [it.kind, place(p)];
   };
 
-  function facts(tab, it) {
+  /* ───────── Information panel ───────── */
+
+  const none = (text) => `<span class="facts__none">${text}</span>`;
+
+  function socialHTML(social) {
+    const links = Object.keys(SOCIAL).filter((k) => social[k]).map((k) => (
+      `<a class="social" href="${esc(social[k])}" target="_blank" rel="noopener" title="${SOCIAL[k]}">`
+      + `<svg aria-hidden="true"><use href="#s-${k}"/></svg><span class="vh">${SOCIAL[k]} (opens in a new tab)</span></a>`
+    ));
+    return links.length ? `<span class="socials">${links.join('')}</span>` : '';
+  }
+
+  function addressHTML(address) {
+    return `<span class="facts__line">${esc(address)}</span>`
+      + `<a class="facts__map" href="${esc(mapHref(address))}" target="_blank" rel="noopener">Open in Maps${EXT}</a>`;
+  }
+
+  function peopleHTML(people) {
+    return people.map((m) => `<span class="person"><span class="person__name">${esc(m.name)}</span>`
+      + `<span class="person__role">${esc(m.role)}</span></span>`).join('');
+  }
+
+  function facts(tab, it, p) {
     const link = it.url ? `<a href="${esc(it.url)}" target="_blank" rel="noopener">${breakable(where(it))}${EXT}</a>` : '';
     const rows = [];
     if (tab === 'universities') {
-      rows.push(['Programme', esc(it.programme)], ['Programme page', link || 'Not listed'], ['Type', esc(it.kind)]);
+      rows.push(['Programme', esc(it.programme)], ['Programme page', link || none('Not listed')]);
+      if (p.degree) rows.push(['Degree', esc(p.degree)]);
+      if (p.faculty) rows.push(['Faculty', esc(p.faculty)]);
+      if (p.since) rows.push(['Running since', esc(p.since)]);
+      rows.push(['Type', esc(it.kind)]);
     } else {
-      const none = it.status === 'soon' ? 'Coming soon' : 'Not listed';
-      rows.push(['Website', link || `<span class="facts__none">${none}</span>`]);
+      rows.push(['Website', link || none(it.status === 'soon' ? 'Coming soon' : 'Not listed')]);
       rows.push(['Type', tab === 'studios' ? esc(typeLabel(it)) : 'Indie developer']);
       if (tab === 'studios') rows.push(['Founded', String(it.founded)]);
+      if (p.size) rows.push(['Company size', `${esc(p.size)} employees`]);
     }
-    rows.push(['Location', 'Jordan'], ['Listed in', `<a href="index.html#${tab}/${esc(it.logo)}">${esc(GROUP[tab].title)}</a>`]);
+    rows.push([tab === 'universities' ? 'Location' : 'Headquarters', esc(place(p))]);
+    if (p.address) rows.push(['Address', addressHTML(p.address)]);
+    if (p.offices && p.offices.length) rows.push([p.offices.length > 1 ? 'Other offices' : 'Other office', p.offices.map((o) => `<span class="facts__line">${esc(o)}</span>`).join('')]);
+    if (p.platforms && p.platforms.length) rows.push(['Platforms', esc(p.platforms.join(', '))]);
+    if (p.people && p.people.length) rows.push([p.people.length > 1 ? 'People' : 'Led by', peopleHTML(p.people)]);
+    const social = p.social ? socialHTML(p.social) : '';
+    if (social) rows.push(['Follow', social]);
+    rows.push(['Listed in', `<a href="index.html#${tab}/${esc(it.logo)}">${esc(GROUP[tab].title)}</a>`]);
     return rows.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('');
   }
 
@@ -71,6 +131,58 @@
     else if (it.site && !isDomain(it.site)) label = `Open on ${it.site}`;
     return `<a class="btn-visit" href="${esc(it.url)}" target="_blank" rel="noopener">${esc(label)}`
       + `<svg aria-hidden="true"><use href="#i-ext"/></svg><span class="vh"> (opens ${esc(where(it))} in a new tab)</span></a>`;
+  }
+
+  /* ───────── About and Games ───────── */
+
+  function renderAbout(tab, it, p) {
+    const paras = (p.about || []).map((t) => `<p>${esc(t)}</p>`);
+    const s = standing(tab, it);
+    if (s) paras.push(`<p class="about__standing">${s}</p>`);
+    if (!paras.length) return;
+    const section = $('[data-about]');
+    $('[data-about-title]').textContent = tab === 'universities' ? 'About' : `About ${it.name}`;
+    section.insertAdjacentHTML('beforeend', paras.join(''));
+    section.hidden = false;
+  }
+
+  function gameHTML(g) {
+    const meta = [];
+    if (g.year) meta.push(`<span class="game__year">${g.year}</span>`);
+    if (g.note) meta.push(esc(g.note));
+    const chips = (g.platforms || []).map((x) => `<span class="chip">${esc(x)}</span>`).join('');
+    const body = `<span class="game__name">${esc(g.name)}</span>`
+      + (meta.length ? `<span class="game__meta">${meta.join('<span aria-hidden="true"> · </span>')}</span>` : '')
+      + (g.blurb ? `<span class="game__blurb">${esc(g.blurb)}</span>` : '')
+      + (chips ? `<span class="game__chips">${chips}</span>` : '');
+    if (!g.url) return `<li><div class="game">${body}</div></li>`;
+    return `<li><a class="game game--link" href="${esc(g.url)}" target="_blank" rel="noopener">${body}`
+      + `<svg class="game__go" aria-hidden="true"><use href="#i-ext"/></svg>`
+      + `<span class="vh"> (opens on ${esc(store(g.url))} in a new tab)</span></a></li>`;
+  }
+
+  function renderGames(it, p) {
+    const games = p.games || [];
+    if (!games.length) return;
+    const list = $('[data-games-list]');
+    list.innerHTML = games.map(gameHTML).join('');
+    $('[data-games-count]').textContent = games.length;
+    if (games.length > GAMES_ALL) {
+      const items = Array.from(list.children);
+      items.slice(GAMES).forEach((li) => { li.hidden = true; });
+      const all = $('[data-games-all]');
+      all.textContent = `Show all ${games.length} games`;
+      all.hidden = false;
+      all.addEventListener('click', () => {
+        items.forEach((li) => { li.hidden = false; });
+        all.remove();
+        // Keep the keyboard where the list grew: on the first game that was hidden.
+        const next = items[GAMES].firstElementChild;
+        if (next.tagName !== 'A') next.tabIndex = -1;
+        next.focus();
+      });
+    }
+    $('[data-games]').hidden = false;
   }
 
   /* ───────── The page ───────── */
@@ -88,22 +200,24 @@
   }
 
   function renderListing(tab, it) {
+    const p = PROFILES[it.logo] || {};
     document.title = `${it.name} · Jordan Game Companies`;
     crumbs(tab, it);
 
     profile.innerHTML = `<span class="profile__logo"><img src="${logoSrc(it.logo)}" alt="" width="128" height="128"></span>`
       + `<div class="profile__id"><h1 tabindex="-1">${esc(it.name)}</h1>`
-      + `<p class="profile__meta">${metaParts(tab, it).map(esc).join('<span aria-hidden="true"> · </span>')}</p></div>`
+      + (p.tagline ? `<p class="profile__tag">${esc(p.tagline)}</p>` : '')
+      + `<p class="profile__meta">${metaParts(tab, it, p).map(esc).join('<span aria-hidden="true"> · </span>')}</p></div>`
       + `<div class="profile__act">${visit(tab, it)}</div>`;
 
-    const text = about(tab, it);
-    if (text) $('[data-about]').innerHTML = text;
-    else $('.about').remove();
-    $('[data-facts]').innerHTML = facts(tab, it);
+    renderAbout(tab, it, p);
+    renderGames(it, p);
+    $('[data-facts]').innerHTML = facts(tab, it, p);
     $('[data-sheet]').hidden = false;
 
     const desc = document.querySelector('meta[name="description"]');
-    if (desc) desc.content = `${it.name}: ${metaParts(tab, it).join(', ')}. From the Jordan Game Companies directory.`;
+    const lead = p.tagline || metaParts(tab, it, p).join(', ');
+    if (desc) desc.content = `${it.name}: ${lead}${/[.!?]$/.test(lead) ? '' : '.'} From the Jordan Game Companies directory.`;
 
     renderMore(tab, it);
   }

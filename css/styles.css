@@ -542,6 +542,9 @@ h1, h2 { text-wrap: balance; }
 }
 .profile__id h1:focus { outline: none; }
 .profile__meta { margin: 10px 0 0; font-size: 16px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+/* The tagline says what the listing is; the facts line under it steps back a shade. */
+.profile__tag { margin: 12px 0 0; max-width: 60ch; font-size: 17px; line-height: 1.5; color: var(--ink-2); text-wrap: pretty; }
+.profile__tag + .profile__meta { margin-top: 8px; font-size: 15px; color: var(--ink-3); }
 .profile__meta a { color: var(--sign); font-weight: 500; text-underline-offset: 3px; }
 .profile--missing { grid-template-columns: minmax(0, 1fr); align-items: start; margin-top: 40px; }
 .profile--missing .profile__act { padding-top: 8px; }
@@ -566,27 +569,71 @@ h1, h2 { text-wrap: balance; }
 .btn-visit:hover { background: var(--sign-hover); transform: translateY(-1px); box-shadow: var(--shadow-lift); }
 .btn-visit svg { width: 14px; height: 14px; flex: none; }
 
-/* The sheet: About and more of the category, with the information column on the right. */
+/* The sheet: About, Games and more of the category, with the information column on the right. */
 .sheet {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 320px;
-  grid-template-rows: auto 1fr;
-  grid-template-areas: "about side" "more side";
+  align-items: start;
   gap: 0 56px;
   margin-top: 48px;
 }
 .sheet[hidden] { display: none; }
-.sheet__main { display: contents; }
-.about { grid-area: about; }
+.sheet__main { display: flex; flex-direction: column; gap: 48px; min-width: 0; }
+.sheet section[hidden] { display: none; }
 .about h2, .more__head h2 { margin: 0; font-size: 22px; font-weight: 600; line-height: 1.25; letter-spacing: -0.01em; }
-.about p { margin: 12px 0 0; max-width: 62ch; font-size: 17px; line-height: 1.65; color: var(--ink-2); }
+.about p { margin: 12px 0 0; max-width: 62ch; font-size: 17px; line-height: 1.65; color: var(--ink-2); text-wrap: pretty; }
+.about h2 + p { margin-top: 14px; }
 .about b { font-weight: 500; color: var(--ink); }
 .about a { color: var(--sign); font-weight: 500; text-underline-offset: 3px; }
+/* The directory's own line on the studio closes the About, a step quieter than the profile. */
+.about .about__standing { margin-top: 16px; font-size: 15px; line-height: 1.6; color: var(--ink-3); }
 
-.more { grid-area: more; margin-top: 48px; }
-@media (min-width: 1001px) {
-  .sheet:not(:has(.about)) .more { grid-row: 1 / -1; margin-top: 0; }
+/* Games: the listing's titles as paper tiles, two across; a linked one opens its store page. */
+.games__count { font-weight: 300; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.games__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
 }
+.games__list li { display: flex; }
+.games__list li[hidden] { display: none; }
+.game {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  padding: 16px 40px 16px 18px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  color: inherit;
+  text-decoration: none;
+}
+.game--link { transition: transform .22s var(--ease-out), box-shadow .22s var(--ease-out); }
+.game--link:hover { transform: translateY(-2px); box-shadow: var(--shadow-lift); }
+.game:focus { outline: none; }
+.game:focus-visible { outline: 2px solid var(--sign); outline-offset: 3px; }
+.game__name { font-size: 16px; font-weight: 500; line-height: 1.3; }
+.game--link:hover .game__name { color: var(--sign); }
+.game__meta { font-size: 13px; line-height: 1.45; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.game__year { font-weight: 500; color: var(--ink-2); }
+.game__blurb { font-size: 14px; line-height: 1.5; color: var(--ink-2); text-wrap: pretty; }
+.game__chips { display: flex; flex-wrap: wrap; gap: 4px; margin-top: auto; padding-top: 6px; }
+.game__go {
+  position: absolute;
+  top: 16px; right: 16px;
+  width: 14px; height: 14px;
+  color: var(--ink-3);
+  transition: color .15s ease, transform .22s var(--ease-out);
+}
+.game--link:hover .game__go { color: var(--sign); transform: translate(1px, -1px); }
+.games__all { margin-top: 16px; }
 .more__head {
   display: flex;
   flex-wrap: wrap;
@@ -609,11 +656,8 @@ h1, h2 { text-wrap: balance; }
 .more__all svg { width: 15px; height: 15px; }
 .sheet .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
+/* Not sticky: with people, an address and social links, the panel can outgrow the window. */
 .sheet__side {
-  grid-area: side;
-  align-self: start;
-  position: sticky;
-  top: 24px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -646,6 +690,29 @@ h1, h2 { text-wrap: balance; }
 .facts dd a { color: var(--sign); text-decoration: underline; text-underline-offset: 3px; }
 .facts dd a svg { display: inline-block; width: 12px; height: 12px; margin-left: 5px; vertical-align: -1px; }
 .facts__none { font-weight: 400; color: var(--ink-3); }
+.facts__line { display: block; }
+.facts dd .facts__map { display: inline-block; margin-top: 3px; font-size: 13px; font-weight: 500; }
+.person { display: block; }
+.person + .person { margin-top: 6px; }
+.person__name { display: block; }
+.person__role { display: block; font-size: 13px; font-weight: 400; color: var(--ink-3); }
+
+/* Social links: the listing's own channels, as small round paper buttons. */
+.socials { display: flex; flex-wrap: wrap; gap: 6px; margin: -2px 0; }
+.facts dd a.social {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: var(--paper);
+  box-shadow: inset 0 0 0 1px var(--line);
+  color: var(--ink-2);
+  text-decoration: none;
+  transition: background-color .15s ease, color .15s ease;
+}
+.facts dd a.social:hover { background: var(--chip); color: var(--sign); }
+.facts dd a.social svg { width: 16px; height: 16px; margin: 0; vertical-align: 0; }
 
 /* ───────── Footer: back to the sky, the city on the horizon ───────── */
 
@@ -689,16 +756,13 @@ h1, h2 { text-wrap: balance; }
   .search { flex: 1 1 240px; }
   .profile { grid-template-columns: auto minmax(0, 1fr); }
   .profile__act { grid-column: 1 / -1; }
-  .sheet {
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: none;
-    grid-template-areas: "about" "side" "more";
-    gap: 32px;
-    margin-top: 36px;
-  }
-  .sheet:not(:has(.about)) { grid-template-areas: "side" "more"; }
-  .sheet__side { position: static; }
-  .more { margin-top: 16px; }
+  /* One column: About, then the facts, then Games and more of the category. */
+  .sheet { display: flex; flex-direction: column; gap: 40px; margin-top: 36px; }
+  .sheet__main { display: contents; }
+  .about { order: 1; }
+  .sheet__side { order: 2; }
+  .games { order: 3; }
+  .more { order: 4; }
 }
 
 @media (max-width: 720px) {
@@ -737,7 +801,8 @@ h1, h2 { text-wrap: balance; }
   .btn-visit { width: 100%; justify-content: center; }
   .about h2, .more__head h2 { font-size: 20px; }
   .about p { font-size: 16px; }
-  .sheet .cards { grid-template-columns: minmax(0, 1fr); }
+  .profile__tag { font-size: 16px; }
+  .sheet .cards, .games__list { grid-template-columns: minmax(0, 1fr); gap: 12px; }
 }
 
 @media (max-width: 400px) {
