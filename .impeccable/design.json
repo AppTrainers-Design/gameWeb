@@ -1,0 +1,544 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-27T12:00:00+00:00",
+  "title": "Design System: Jordan Game Companies",
+  "extensions": {
+    "colorMeta": {
+      "sky": {
+        "role": "primary",
+        "displayName": "Amman Sky",
+        "canonical": "#2f6be5",
+        "tonalRamp": [
+          "#10306e",
+          "#1b4ba8",
+          "#2357bf",
+          "#2f6be5",
+          "#4a76dc",
+          "#6690ec",
+          "#91b2f3",
+          "#a4c0f6"
+        ]
+      },
+      "sign-blue": {
+        "role": "secondary",
+        "displayName": "Enamel Sign Blue",
+        "canonical": "#1b4ba8",
+        "tonalRamp": [
+          "#0b1d42",
+          "#12316e",
+          "#19479e",
+          "#215ccf",
+          "#467be1",
+          "#7ba1ea",
+          "#b4caf3",
+          "#e9effb"
+        ]
+      },
+      "sign-blue-hover": {
+        "role": "secondary",
+        "displayName": "Sign Blue, Lit",
+        "canonical": "#2357bf",
+        "tonalRamp": [
+          "#0c1d41",
+          "#14316c",
+          "#1c479b",
+          "#255ccb",
+          "#4a7bde",
+          "#7ea1e7",
+          "#b6caf2",
+          "#e9effb"
+        ]
+      },
+      "taxi-yellow": {
+        "role": "tertiary",
+        "displayName": "Taxi Yellow",
+        "canonical": "#ffc61a",
+        "tonalRamp": [
+          "#4c3900",
+          "#806000",
+          "#b88a00",
+          "#f0b400",
+          "#ffca29",
+          "#ffd966",
+          "#ffe9a8",
+          "#fff9e5"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#16181d",
+        "tonalRamp": [
+          "#21242b",
+          "#373c48",
+          "#4f5668",
+          "#677188",
+          "#858ea3",
+          "#a8aebd",
+          "#ced1da",
+          "#f0f2f4"
+        ]
+      },
+      "ink-muted": {
+        "role": "neutral",
+        "displayName": "Slate Ink",
+        "canonical": "#414a5c",
+        "tonalRamp": [
+          "#20242d",
+          "#353c4b",
+          "#4c576c",
+          "#63718c",
+          "#818ea6",
+          "#a5aec0",
+          "#ccd1db",
+          "#f0f2f4"
+        ]
+      },
+      "ink-faint": {
+        "role": "neutral",
+        "displayName": "Street Grey",
+        "canonical": "#5b6475",
+        "tonalRamp": [
+          "#21252b",
+          "#383d48",
+          "#505867",
+          "#697387",
+          "#8790a1",
+          "#a9b0bc",
+          "#ced2d9",
+          "#f1f2f4"
+        ]
+      },
+      "stone": {
+        "role": "neutral",
+        "displayName": "Stone",
+        "canonical": "#f7f8fa",
+        "tonalRamp": [
+          "#1d232f",
+          "#313b4e",
+          "#475571",
+          "#5c6f94",
+          "#7b8cad",
+          "#a1adc4",
+          "#cad0de",
+          "#eff1f5"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#262626",
+          "#404040",
+          "#5c5c5c",
+          "#787878",
+          "#949494",
+          "#b2b2b2",
+          "#d4d4d4",
+          "#f2f2f2"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#dde3ec",
+        "tonalRamp": [
+          "#1b2431",
+          "#2e3c52",
+          "#425776",
+          "#56719a",
+          "#768eb2",
+          "#9daec8",
+          "#c7d1e0",
+          "#eff2f6"
+        ]
+      },
+      "hairline-strong": {
+        "role": "neutral",
+        "displayName": "Hairline, Pressed",
+        "canonical": "#c5cfdd",
+        "tonalRamp": [
+          "#1c2530",
+          "#2f3d50",
+          "#445874",
+          "#597397",
+          "#788fb0",
+          "#9fafc6",
+          "#c8d2df",
+          "#eff2f6"
+        ]
+      },
+      "chip-wash": {
+        "role": "neutral",
+        "displayName": "Chip Wash",
+        "canonical": "#edf1f7",
+        "tonalRamp": [
+          "#182335",
+          "#273b58",
+          "#38557f",
+          "#4a6fa6",
+          "#6b8cbd",
+          "#95add0",
+          "#c3d0e4",
+          "#edf1f7"
+        ]
+      },
+      "limestone-shade": {
+        "role": "neutral",
+        "displayName": "Limestone Shade",
+        "canonical": "#e8edf5",
+        "tonalRamp": [
+          "#172335",
+          "#273a59",
+          "#385380",
+          "#496da7",
+          "#6a8abe",
+          "#94acd1",
+          "#c3d0e5",
+          "#edf1f7"
+        ]
+      },
+      "limestone-deep": {
+        "role": "neutral",
+        "displayName": "Limestone Deep",
+        "canonical": "#c9d3e4",
+        "tonalRamp": [
+          "#192333",
+          "#2a3a55",
+          "#3d547a",
+          "#506da0",
+          "#708bb8",
+          "#99accc",
+          "#c5d0e2",
+          "#eef1f6"
+        ]
+      },
+      "terrace-top": {
+        "role": "neutral",
+        "displayName": "Terrace Top",
+        "canonical": "#dfe5ee",
+        "tonalRamp": [
+          "#1b2432",
+          "#2c3c53",
+          "#405678",
+          "#53719d",
+          "#738db5",
+          "#9baeca",
+          "#c6d1e1",
+          "#eef1f6"
+        ]
+      },
+      "terrace-side": {
+        "role": "neutral",
+        "displayName": "Terrace Side",
+        "canonical": "#c6d0de",
+        "tonalRamp": [
+          "#1c2530",
+          "#2f3d51",
+          "#435874",
+          "#587398",
+          "#778fb0",
+          "#9eafc7",
+          "#c8d2df",
+          "#eff2f6"
+        ]
+      },
+      "terrace-deep": {
+        "role": "neutral",
+        "displayName": "Terrace Deep",
+        "canonical": "#a8b5c9",
+        "tonalRamp": [
+          "#1d242f",
+          "#313d4f",
+          "#465771",
+          "#5c7294",
+          "#7b8fad",
+          "#a1afc4",
+          "#cad1de",
+          "#eff2f5"
+        ]
+      },
+      "window-dark": {
+        "role": "neutral",
+        "displayName": "Window Dark",
+        "canonical": "#2a3242",
+        "tonalRamp": [
+          "#1e232f",
+          "#323b4e",
+          "#475570",
+          "#5d6f92",
+          "#7c8cac",
+          "#a1adc4",
+          "#cad0dd",
+          "#eff1f5"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The directory's title on the sky only."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Figures paragraph under the title; figures at 600 with tabular numerals."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Empty-state title."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Note and footer headings; card names at 500."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text; notes at 14px."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Tabs, sign plates, and the pills (600)."
+      },
+      "meta": {
+        "displayName": "Meta",
+        "purpose": "Card domains and programme lines, truncated."
+      },
+      "chip": {
+        "displayName": "Chip",
+        "purpose": "Type and year chips, tabular numerals."
+      },
+      "listing-name": {
+        "displayName": "Listing name",
+        "purpose": "The listing page's h1, on stone beside the framed logo tile, max 18em."
+      },
+      "section": {
+        "displayName": "Section",
+        "purpose": "Listing-page headings on stone (About, More <category>); 20px on mobile."
+      }
+    },
+    "shadows": [
+      {
+        "name": "card-rest",
+        "value": "0 12px 24px -16px rgba(22, 24, 29, .38)",
+        "purpose": "Listing cards, the information panel, the listing page's framed logo tile, and the Visit pill at rest on stone."
+      },
+      {
+        "name": "card-lift",
+        "value": "0 20px 32px -18px rgba(22, 24, 29, .45)",
+        "purpose": "Linked card on hover with a 2px rise; the Visit pill on hover with a 1px rise."
+      },
+      {
+        "name": "sky-cast",
+        "value": "0 12px 20px -12px rgba(8, 18, 48, .7)",
+        "purpose": "Tabs, sign plates, the Add your studio pill, the mark, and the tooltip: objects over the sky."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "All movement: hovers, lifts, the arrival ring, the hill entrance."
+      },
+      {
+        "name": "state-fade",
+        "value": ".15s ease",
+        "purpose": "Background and border color changes on hover."
+      },
+      {
+        "name": "card-lift",
+        "value": ".22s ease-out",
+        "purpose": "Card rise and shadow on hover."
+      },
+      {
+        "name": "house-raise",
+        "value": ".3s ease-out, translateY(-6px)",
+        "purpose": "A hill house on hover or focus."
+      },
+      {
+        "name": "arrival-ring",
+        "value": ".7s ease-out, outline-offset 16px to 3px",
+        "purpose": "Taxi-yellow ring on a card reached from a listing page's breadcrumb or Listed in link, or a deep link."
+      },
+      {
+        "name": "hill-entrance",
+        "value": "640ms ease-out per house, 160ms + 90ms stagger; plates fade 400ms at +260ms",
+        "purpose": "The hill builds year by year in the directory, the only page that draws it. Off under reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "cards-2up",
+        "value": "1240px"
+      },
+      {
+        "name": "cta-short-copy",
+        "value": "1180px"
+      },
+      {
+        "name": "single-column-hero",
+        "value": "1000px"
+      },
+      {
+        "name": "mobile",
+        "value": "720px"
+      },
+      {
+        "name": "narrow",
+        "value": "400px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Sign Plate",
+      "kind": "nav",
+      "refersTo": "sign-plate",
+      "description": "Blue enamel street sign used for every navigational link on the sky.",
+      "html": "<div class=\"ds-sky\"><nav class=\"ds-signs\"><a class=\"ds-sign\" href=\"#\">Studios</a><a class=\"ds-sign\" href=\"#\">Indie devs</a><a class=\"ds-sign\" href=\"#\">Universities</a></nav></div>",
+      "css": ".ds-sky{background:#2f6be5;padding:24px}.ds-signs{display:flex;gap:10px}.ds-sign{position:relative;display:inline-flex;align-items:center;background:#1b4ba8;color:#fff;font-family:'Readex Pro',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:500;font-size:14px;line-height:1;text-decoration:none;padding:11px 16px;border-radius:6px;border:0;box-shadow:0 8px 16px -11px rgba(8,18,48,.7);transition:background-color .15s ease,transform .2s cubic-bezier(.16,1,.3,1);cursor:pointer}.ds-sign::after{content:'';position:absolute;inset:3px;border:1.5px solid rgba(255,255,255,.92);border-radius:4px;pointer-events:none}.ds-sign:hover{background:#2357bf}.ds-sign:active{transform:translateY(1px)}.ds-sign:focus-visible{outline:2px solid #fff;outline-offset:3px}"
+    },
+    {
+      "name": "Tabs",
+      "kind": "nav",
+      "refersTo": "tab",
+      "description": "Large sign plates straddling the sky edge; the selected tab turns taxi yellow.",
+      "html": "<div class=\"ds-edge\"><div class=\"ds-tabs\" role=\"tablist\"><button class=\"ds-tab\" role=\"tab\" aria-selected=\"true\">Studios &amp; publishers <span class=\"ds-count\">12</span></button><button class=\"ds-tab\" role=\"tab\" aria-selected=\"false\">Indie developers <span class=\"ds-count\">14</span></button><button class=\"ds-tab\" role=\"tab\" aria-selected=\"false\">Universities <span class=\"ds-count\">5</span></button></div></div>",
+      "css": ".ds-edge{background:linear-gradient(#2f6be5 50%,#f7f8fa 50%);padding:0 24px}.ds-tabs{display:flex;flex-wrap:wrap;gap:10px}.ds-tab{position:relative;display:inline-flex;align-items:center;gap:10px;appearance:none;border:0;margin:0;background:#1b4ba8;color:#fff;font-family:'Readex Pro',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:500;font-size:15px;line-height:1;padding:18px 20px;border-radius:6px;cursor:pointer;box-shadow:0 12px 20px -12px rgba(8,18,48,.7);transition:background-color .15s ease,transform .2s cubic-bezier(.16,1,.3,1)}.ds-tab::after{content:'';position:absolute;inset:4px;border:1.5px solid rgba(255,255,255,.92);border-radius:4px;pointer-events:none}.ds-tab:hover{background:#2357bf}.ds-tab:active{transform:translateY(1px)}.ds-tab[aria-selected=true]{background:#ffc61a;color:#16181d}.ds-tab[aria-selected=true]::after{border-color:rgba(22,24,29,.85)}.ds-tab:focus-visible{outline:2px solid #16181d;outline-offset:3px}.ds-count{font-weight:300;font-variant-numeric:tabular-nums}"
+    },
+    {
+      "name": "Add Your Studio Pill",
+      "kind": "button",
+      "refersTo": "cta-pill",
+      "description": "The white action pill on the sky; in every directory view and in the listing page top bar.",
+      "html": "<div class=\"ds-sky2\"><a class=\"ds-cta\" href=\"#\">Add your studio<span class=\"ds-where\">on 962Games</span><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M14 4h6v6M20 4l-9 9M18 14v4.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 4 18.5v-11A1.5 1.5 0 0 1 5.5 6H10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a></div>",
+      "css": ".ds-sky2{background:#2f6be5;padding:24px}.ds-cta{display:inline-flex;align-items:center;gap:9px;background:#fff;color:#1b4ba8;font-family:'Readex Pro',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:600;font-size:15px;line-height:1;text-decoration:none;padding:14px 22px;border-radius:999px;box-shadow:0 10px 20px -12px rgba(8,18,48,.6);transition:transform .2s cubic-bezier(.16,1,.3,1),box-shadow .2s cubic-bezier(.16,1,.3,1)}.ds-where{font-weight:400;margin-left:-5px}.ds-cta:hover{transform:translateY(-1px);box-shadow:0 14px 24px -12px rgba(8,18,48,.65)}.ds-cta:focus-visible{outline:2px solid #fff;outline-offset:3px}"
+    },
+    {
+      "name": "Visit Pill",
+      "kind": "button",
+      "refersTo": "button-visit",
+      "description": "The listing page's one way out to the listing's own site: a sign-blue pill on stone.",
+      "html": "<div class=\"ds-stone\"><a class=\"ds-visit\" href=\"#\">Visit website<svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M14 4h6v6M20 4l-9 9M18 14v4.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 4 18.5v-11A1.5 1.5 0 0 1 5.5 6H10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a></div>",
+      "css": ".ds-stone{background:#f7f8fa;padding:24px}.ds-visit{display:inline-flex;align-items:center;gap:9px;background:#1b4ba8;color:#fff;font-family:'Readex Pro',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:600;font-size:15px;line-height:1;white-space:nowrap;text-decoration:none;padding:15px 22px;border-radius:999px;box-shadow:0 12px 24px -16px rgba(22,24,29,.38);transition:background-color .15s ease,transform .2s cubic-bezier(.16,1,.3,1),box-shadow .2s cubic-bezier(.16,1,.3,1)}.ds-visit:hover{background:#2357bf;transform:translateY(-1px);box-shadow:0 20px 32px -18px rgba(22,24,29,.45)}.ds-visit:focus-visible{outline:2px solid #1b4ba8;outline-offset:3px}"
+    },
+    {
+      "name": "Type Filter",
+      "kind": "chip",
+      "refersTo": "segment",
+      "description": "Segmented radio group on stone; the checked segment is taxi yellow.",
+      "html": "<div class=\"ds-kind\" role=\"radiogroup\"><button role=\"radio\" aria-checked=\"true\">All</button><button role=\"radio\" aria-checked=\"false\">Studios</button><button role=\"radio\" aria-checked=\"false\">Publishers</button></div>",
+      "css": ".ds-kind{display:inline-flex;background:#fff;border:1px solid #dde3ec;border-radius:8px;overflow:hidden}.ds-kind button{appearance:none;border:0;border-left:1px solid #dde3ec;background:none;font-family:'Readex Pro',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:14px;line-height:1;color:#414a5c;padding:12px 16px;cursor:pointer;transition:background-color .15s ease}.ds-kind button:first-child{border-left:0}.ds-kind button:hover{background:#edf1f7}.ds-kind button[aria-checked=true]{background:#ffc61a;color:#16181d;font-weight:500}.ds-kind button:focus-visible{outline:2px solid #1b4ba8;outline-offset:-3px}"
+    },
+    {
+      "name": "Search Field",
+      "kind": "input",
+      "refersTo": "search-field",
+      "description": "Paper field with leading icon and a / key hint; focus is a sign-blue outline.",
+      "html": "<div class=\"ds-search\"><svg class=\"ds-search-icon\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"6.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"m20 20-4.2-4.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/></svg><input type=\"search\" placeholder=\"Search studios\" aria-label=\"Search listings\"><kbd class=\"ds-key\">/</kbd></div>",
+      "css": ".ds-search{position:relative;width:260px}.ds-search input{width:100%;box-sizing:border-box;font-family:'Readex Pro',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:15px;color:#16181d;background:#fff;border:1px solid #dde3ec;border-radius:8px;padding:11px 44px 11px 40px;caret-color:#1b4ba8;transition:border-color .15s ease}.ds-search input::placeholder{color:#5b6475}.ds-search input:hover{border-color:#c5cfdd}.ds-search input:focus{outline:2px solid #1b4ba8;outline-offset:1px;border-color:transparent}.ds-search-icon{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:#5b6475;pointer-events:none}.ds-key{position:absolute;right:10px;top:50%;transform:translateY(-50%);min-width:22px;text-align:center;font:500 12px/1 'Readex Pro',system-ui,sans-serif;color:#5b6475;background:#f7f8fa;border:1px solid #dde3ec;border-radius:5px;padding:4px 6px}.ds-search:has(input:not(:placeholder-shown)) .ds-key{display:none}"
+    },
+    {
+      "name": "Listing Card",
+      "kind": "card",
+      "refersTo": "listing-card",
+      "description": "Paper card with a logo tile column, name, meta line and chips; lifts on hover. Opens the listing page in a new tab from the directory.",
+      "html": "<a class=\"ds-card\" href=\"#\"><span class=\"ds-logo\"><span class=\"ds-tile\">AG</span></span><span class=\"ds-body\"><span class=\"ds-name\">Ambrator Games</span><span class=\"ds-meta\">ambratorgames.com</span><span class=\"ds-chips\"><span class=\"ds-chip\">Studio</span><span class=\"ds-chip ds-chip--year\"><svg width=\"11\" height=\"11\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><rect x=\"1.5\" y=\"4.5\" width=\"9\" height=\"6.5\" rx=\".6\" fill=\"currentColor\"/><rect x=\"3\" y=\"1.5\" width=\"3\" height=\"2.4\" rx=\".5\" fill=\"currentColor\"/></svg>2019</span></span></span></a>",
+      "css": ".ds-card{display:flex;width:340px;min-height:106px;background:#fff;border:1px solid #dde3ec;border-radius:10px;overflow:hidden;color:#16181d;text-decoration:none;font-family:'Readex Pro',system-ui,-apple-system,'Segoe UI',sans-serif;box-shadow:0 12px 24px -16px rgba(22,24,29,.38);transition:transform .22s cubic-bezier(.16,1,.3,1),box-shadow .22s cubic-bezier(.16,1,.3,1)}.ds-card:hover{transform:translateY(-2px);box-shadow:0 20px 32px -18px rgba(22,24,29,.45)}.ds-card:focus-visible{outline:2px solid #1b4ba8;outline-offset:3px}.ds-logo{flex:0 0 96px;display:grid;place-items:center;border-right:1px solid #dde3ec}.ds-tile{width:76px;height:76px;border-radius:8px;box-shadow:0 0 0 1px #dde3ec;background:#16181d;color:#ffc61a;display:grid;place-items:center;font-weight:600}.ds-body{flex:1;display:flex;flex-direction:column;justify-content:center;gap:3px;padding:14px 28px 14px 16px}.ds-name{font-weight:500;font-size:16px;line-height:1.3}.ds-meta{font-size:13px;line-height:1.45;color:#5b6475}.ds-chips{display:flex;gap:4px;margin-top:5px}.ds-chip{font-size:12px;font-weight:500;line-height:1;color:#414a5c;background:#edf1f7;padding:5px 9px;border-radius:999px}.ds-chip--year{display:inline-flex;align-items:center;gap:4px;background:none;box-shadow:inset 0 0 0 1px #dde3ec;color:#5b6475;font-variant-numeric:tabular-nums}"
+    },
+    {
+      "name": "Arrived Card",
+      "kind": "card",
+      "refersTo": "listing-card",
+      "description": "A card reached from a listing page's breadcrumb or Listed in link, or a deep link: a taxi-yellow ring closes in.",
+      "html": "<div class=\"ds-lit\">Kenda AI</div>",
+      "css": ".ds-lit{width:260px;padding:24px;background:#fff;border:1px solid #dde3ec;border-radius:10px;font-family:'Readex Pro',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:500;outline:3px solid #ffc61a;outline-offset:3px;animation:ds-lit .7s cubic-bezier(.16,1,.3,1) infinite alternate}@keyframes ds-lit{from{outline-offset:16px;outline-color:rgba(255,198,26,0)}to{outline-offset:3px;outline-color:#ffc61a}}"
+    },
+    {
+      "name": "Year Plate",
+      "kind": "custom",
+      "refersTo": "sign-plate",
+      "description": "The hill's street-name plate carrying a founding year.",
+      "html": "<svg class=\"ds-plate\" width=\"76\" height=\"32\" viewBox=\"0 0 38 16\"><rect width=\"38\" height=\"16\" rx=\"2.5\" fill=\"#1b4ba8\"/><rect x=\"2\" y=\"2\" width=\"34\" height=\"12\" rx=\"1.5\" fill=\"none\" stroke=\"#fff\" stroke-width=\".9\"/><text x=\"19\" y=\"11.2\" fill=\"#fff\" font-size=\"9\" font-weight=\"500\" text-anchor=\"middle\" font-family=\"Readex Pro, system-ui, sans-serif\">2013</text></svg>",
+      "css": ".ds-plate{display:block}"
+    },
+    {
+      "name": "Quiet Button",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "Secondary pill action on stone, e.g. Clear search in the empty state.",
+      "html": "<button class=\"ds-btn\">Clear search</button>",
+      "css": ".ds-btn{appearance:none;font-family:'Readex Pro',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:14px;font-weight:500;color:#16181d;background:#fff;border:1px solid #c5cfdd;border-radius:999px;padding:9px 16px;cursor:pointer}.ds-btn:hover{background:#edf1f7}.ds-btn:focus-visible{outline:2px solid #1b4ba8;outline-offset:3px}"
+    },
+    {
+      "name": "Information Panel",
+      "kind": "card",
+      "refersTo": "listing-card",
+      "description": "The listing page's facts: a paper panel of hairline-split definition rows.",
+      "html": "<section class=\"ds-facts\"><h2>Information</h2><dl><div><dt>Website</dt><dd><a href=\"#\">maysalward.com</a></dd></div><div><dt>Type</dt><dd>Studio</dd></div><div><dt>Founded</dt><dd>2003</dd></div><div><dt>Location</dt><dd>Jordan</dd></div></dl><p class=\"ds-src\">Listing from <a href=\"#\">962Games</a></p></section>",
+      "css": ".ds-facts{width:320px;box-sizing:border-box;background:#fff;border:1px solid #dde3ec;border-radius:10px;box-shadow:0 12px 24px -16px rgba(22,24,29,.38);padding:18px 20px 16px;font-family:'Readex Pro',system-ui,-apple-system,'Segoe UI',sans-serif;color:#16181d}.ds-facts h2{margin:0 0 8px;font-size:16px;font-weight:600}.ds-facts dl{margin:0}.ds-facts dl>div{display:grid;grid-template-columns:104px minmax(0,1fr);gap:12px;padding:11px 0;border-top:1px solid #dde3ec}.ds-facts dt{font-size:13px;line-height:1.55;color:#5b6475}.ds-facts dd{margin:0;font-size:15px;font-weight:500;line-height:1.4;overflow-wrap:break-word;font-variant-numeric:tabular-nums}.ds-facts a{color:#1b4ba8;text-underline-offset:3px}.ds-facts a:focus-visible{outline:2px solid #1b4ba8;outline-offset:3px}.ds-src{margin:4px 0 0;padding-top:12px;border-top:1px solid #dde3ec;font-size:13px;color:#5b6475}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Amman Hillside",
+    "overview": "The industry is drawn as the city. Above, an open field of sky blue holds the title, the figures, and an isometric limestone hill where every studio is a house standing on the terrace of its founding year, its logo on a white rooftop sign and its year on a blue enamel street-name plate. Below, the page drops to street level: a pale stone ground where the directory lives as white cards. The footer returns to the sky, with the city's skyline on the horizon. Sections are stacked blocks of sky and stone; there are no divider rules between them.\n\nNavigation is signage. Every navigational control is a blue enamel street plate with an inset white rule, and the one item that is currently active turns taxi yellow. That is the whole accent vocabulary: blue says \"this is a way to go\", yellow says \"you are here\". The type is one family, Readex Pro, and hierarchy comes from size and weight alone.\n\nThe density is calm and operational: 31 listings across three tabs, readable at a glance, each one click from its own page on the site. That page is a company profile with no hero: the sky is only its top bar and its footer, and everything between them (breadcrumb, framed logo tile, name, facts, and more of the category) stands on stone. The hill is the only illustration, it appears only in the directory, and it is one fixed drawing, approved by the user as it stands; it scales with its container and never reflows into a different composition.",
+    "keyCharacteristics": [
+      "Two grounds: sky (#2f6be5) above and in the footer, stone (#f7f8fa) at street level between them.",
+      "Blue enamel sign plates for every navigational control; taxi yellow only on the active item.",
+      "One typeface (Readex Pro, variable 160–700), with hierarchy carried by size and weight.",
+      "White paper cards with hairline borders and a soft, low, downward shadow.",
+      "An isometric limestone hill, built year by year on entrance, as the signature drawing."
+    ],
+    "rules": [
+      {
+        "name": "The Taxi Rule",
+        "body": "Taxi yellow marks the one active item in a group and nothing else. If an element is not the current tab, the current segment, or the card you just arrived at, it is not yellow.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Grounds Rule",
+        "body": "A section is either sky or stone. Sections meet at a straight edge with no divider rule. On the sky, everything is white. On stone, surfaces are paper.",
+        "section": "colors"
+      },
+      {
+        "name": "The Size Alone Rule",
+        "body": "Hierarchy is carried by size and weight within one family. Names get no frames, underlines, caps, or colored labels to make them important.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Figures Rule",
+        "body": "Every number that counts or dates (figures, tab counts, years, the result count) uses `font-variant-numeric: tabular-nums`.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Drawing Rule",
+        "body": "The hill is a single composition at every width. It only scales. On small screens, the only change is that the year plates grow (up to 2x) and thin out where they would collide. The newest year always keeps its plate. Never re-lay out, crop into a different shape, or swap the hill for a mobile variant.",
+        "section": "layout"
+      },
+      {
+        "name": "The Contact Shadow Rule",
+        "body": "Every shadow falls straight down, with its spread negative enough that it stays inside the object's footprint. No zero-blur offsets and no colored glows.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** make every navigational control a sign-blue plate with its inset white rule, and turn only the active one taxi yellow with ink text. The breadcrumb is the one text wayfinding row: on stone, ink-faint with ink-muted links, CSS-drawn chevrons.",
+      "**Do** keep text on the sky white, including focus rings and selection (rgba(255,255,255,.32)). On stone, focus rings are 2px sign blue with a 3px offset.",
+      "**Do** separate sections by switching ground (sky and stone) at a straight edge, and let the tab row straddle that edge.",
+      "**Do** use hairlines (#dde3ec) inside components: card borders, the logo divider, and segment dividers.",
+      "**Do** put every card logo on the same 76px, 8px-radius tile with a hairline ring. The listing page's 116px framed tile is the only larger one.",
+      "**Do** use the out-expo easing (cubic-bezier(.16, 1, .3, 1)) for movement, keep hovers to 1–6px of rise, and cut all motion under prefers-reduced-motion.",
+      "**Do** keep \"Add your studio\" reachable in every view, empty results included; on listing pages, in the top bar and the side column's \"Missing from the list?\" note.",
+      "**Do** build every sentence and fact on a listing page from that listing's data, and omit a row rather than fill it with invented content.",
+      "**Do** scale the hill as one drawing. Only its year plates may grow and thin out on small screens."
+    ],
+    "donts": [
+      "**Don't** use taxi yellow for hover, emphasis, decoration, badges, or anything not currently active.",
+      "**Don't** put divider rules or borders between page sections. The ground change is the divider.",
+      "**Don't** add a second typeface, uppercase letter-spaced labels, or colored frames around names to build hierarchy.",
+      "**Don't** use hard offset or zero-blur shadows, or glows. Shadows are soft, downward, and negatively spread.",
+      "**Don't** redraw, recompose, or replace the hill at any breakpoint. The user approved its shape as it stands.",
+      "**Don't** fill the sky with gradients or textures. It is one flat blue; the only thing on it besides content is the skyline tint strip in the footer."
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+# Impeccable local tool state
+.impeccable/config.local.json
+.impeccable/questions/
+.impeccable/build/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Listing · Jordan Game Companies</title>
+  <meta name="description" content="A studio, publisher, indie developer or university in the Jordanian game industry.">
+  <meta name="theme-color" content="#2f6be5">
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="page-listing">
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v4.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 4 18.5v-11A1.5 1.5 0 0 1 5.5 6H10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-house" viewBox="0 0 12 12"><rect x="1.5" y="4.5" width="9" height="6.5" rx=".6" fill="currentColor"/><rect x="3" y="1.5" width="3" height="2.4" rx=".5" fill="currentColor"/></symbol>
+    <symbol id="i-go" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <a class="skip" href="#listing">Skip to the listing</a>
+
+  <header class="sky">
+    <div class="topbar">
+      <a class="brand" href="index.html">
+        <img src="assets/mark.svg" alt="" width="44" height="44">
+        <span><span class="brand__name">Jordan Game Companies</span><span class="brand__sub">Listings from 962Games</span></span>
+      </a>
+      <nav class="signs" aria-label="Directory">
+        <a class="sign" href="index.html#studios">Studios</a>
+        <a class="sign" href="index.html#indies">Indie devs</a>
+        <a class="sign" href="index.html#universities">Universities</a>
+      </nav>
+      <a class="cta" data-register href="https://forms.maysalward.com/mLizav" target="_blank" rel="noopener"><span class="cta__long">Add your studio<span class="cta__where">on 962Games</span></span><span class="cta__short">Add studio</span><svg class="cta__ext" aria-hidden="true"><use href="#i-ext"/></svg><span class="vh"> (opens the 962Games registration form in a new tab)</span></a>
+    </div>
+
+  </header>
+
+  <main class="street street--listing" id="listing" tabindex="-1">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="index.html">Jordanian game industry</a></li>
+        <li data-crumb-group hidden><a href="index.html"></a></li>
+        <li data-crumb-here aria-current="page">Listing</li>
+      </ol>
+    </nav>
+
+    <div class="profile" data-profile>
+      <noscript>
+        <div class="profile__id"><h1>This page needs JavaScript</h1><p class="profile__meta">It builds each listing from the directory's data. <a href="index.html">Go to the directory</a>.</p></div>
+      </noscript>
+    </div>
+
+    <div class="sheet" data-sheet hidden>
+      <div class="sheet__main">
+        <section class="about" aria-labelledby="about-title">
+          <h2 id="about-title">About</h2>
+          <p data-about></p>
+        </section>
+
+        <section class="more" data-more hidden aria-labelledby="more-title">
+          <div class="more__head">
+            <h2 id="more-title" data-more-title></h2>
+            <a class="more__all" data-more-all href="index.html"></a>
+          </div>
+          <ul class="cards" data-more-cards></ul>
+        </section>
+      </div>
+
+      <aside class="sheet__side">
+        <section class="facts" aria-labelledby="facts-title">
+          <h2 id="facts-title">Information</h2>
+          <dl data-facts></dl>
+          <p class="facts__source">Listing from <a data-source href="https://www.962games.com/">962Games</a></p>
+        </section>
+        <div class="note">
+          <h2>Missing from the list?</h2>
+          <p>Listings come from 962Games. Listing there is free for operational studios and companies based in Jordan.</p>
+          <a class="note__link" data-register href="https://forms.maysalward.com/mLizav" target="_blank" rel="noopener">Register on 962Games<svg aria-hidden="true"><use href="#i-ext"/></svg><span class="vh"> (opens in a new tab)</span></a>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="foot__inner">
+      <a class="brand" href="index.html">
+        <img src="assets/mark.svg" alt="" width="44" height="44">
+        <span><span class="brand__name">Jordan Game Companies</span><span class="brand__sub">Listings from 962Games</span></span>
+      </a>
+      <nav class="foot__cols" aria-label="Footer">
+        <div>
+          <h2>Directory</h2>
+          <ul>
+            <li><a href="index.html#studios">Studios &amp; publishers</a></li>
+            <li><a href="index.html#indies">Indie developers</a></li>
+            <li><a href="index.html#universities">Universities</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Source</h2>
+          <ul>
+            <li><a data-source href="https://www.962games.com/">962Games</a></li>
+            <li><a data-register href="https://forms.maysalward.com/mLizav" target="_blank" rel="noopener">Register a studio<span class="vh"> (opens in a new tab)</span></a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <p class="foot__legal">© <span data-year>2026</span> Jordan Game Companies. Logos belong to their companies.</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/listing.js"></script>
+</body>
+</html>
