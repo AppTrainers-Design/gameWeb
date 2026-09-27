@@ -28,7 +28,7 @@
   /* ───────── What the listing is, in words built from its own data ───────── */
 
   // Where a studio stands among the directory's studios: the one thing the head and the information panel don't say.
-  // Other listings get no About section until the source has a description for them.
+  // Other listings get no About section until a description is added for them.
   function about(tab, it) {
     if (tab !== 'studios') return '';
     const same = D.studios.filter((s) => s !== it && s.founded === it.founded).sort(byName);
@@ -138,7 +138,7 @@
     const what = slug ? `Nothing in the directory is listed as “${esc(slug)}”.` : 'This link doesn’t name a listing.';
     profile.classList.add('profile--missing');
     profile.innerHTML = '<div class="profile__id"><h1 tabindex="-1">We couldn’t find that listing</h1>'
-      + `<p class="profile__meta">${what} It may have been renamed or removed from 962Games.</p></div>`
+      + `<p class="profile__meta">${what} It may have been renamed or removed.</p></div>`
       + '<div class="profile__act"><a class="btn-visit" href="index.html">Browse the directory<svg aria-hidden="true"><use href="#i-go"/></svg></a></div>';
   }
 

@@ -112,12 +112,6 @@ h1, h2 { text-wrap: balance; }
   line-height: 1.2;
   letter-spacing: -0.01em;
 }
-.brand__sub {
-  display: block;
-  font-weight: 300;
-  font-size: 13px;
-  line-height: 1.4;
-}
 
 .signs { display: flex; gap: 10px; }
 
@@ -146,27 +140,6 @@ h1, h2 { text-wrap: balance; }
 .sign { font-size: 14px; padding: 11px 16px; }
 .sign:hover, .tab:hover { background: var(--sign-hover); }
 .sign:active, .tab:active { transform: translateY(1px); }
-
-.cta {
-  justify-self: end;
-  display: inline-flex;
-  align-items: center;
-  background: #fff;
-  color: var(--sign);
-  font-weight: 600;
-  font-size: 15px;
-  line-height: 1;
-  text-decoration: none;
-  padding: 14px 22px;
-  border-radius: 999px;
-  box-shadow: 0 10px 20px -12px rgba(8, 18, 48, .6);
-  transition: transform .2s var(--ease-out), box-shadow .2s var(--ease-out);
-}
-.cta:hover { transform: translateY(-1px); box-shadow: 0 14px 24px -12px rgba(8, 18, 48, .65); }
-.cta__short { display: none; }
-.cta__where { font-weight: 400; margin-left: .3em; }
-.cta__ext { width: 14px; height: 14px; margin-left: 9px; flex: none; }
-@media (max-width: 1180px) { .cta__where { display: none; } }
 
 .hero {
   display: grid;
@@ -376,29 +349,6 @@ h1, h2 { text-wrap: balance; }
 .search__clear svg { width: 16px; height: 16px; }
 .search:has(input:not(:placeholder-shown)) .search__key { display: none; }
 
-.note {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 18px 18px 20px;
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--ink-2);
-}
-.note h2 { margin: 0 0 6px; font-size: 16px; font-weight: 600; color: var(--ink); }
-.note p { margin: 0 0 12px; }
-.note__link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: 500;
-  color: var(--sign);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-.note__link svg { width: 14px; height: 14px; }
-.note--after { display: none; }
-
 .cards {
   list-style: none;
   margin: 0;
@@ -507,8 +457,6 @@ h1, h2 { text-wrap: balance; }
 }
 .empty p { margin: 0 0 12px; }
 .empty__title { font-size: 18px; font-weight: 500; color: var(--ink); }
-.empty__add { margin: 18px 0 0 !important; font-size: 14px; }
-.empty__add a { color: var(--sign); font-weight: 500; text-underline-offset: 3px; }
 .btn {
   appearance: none;
   font: inherit;
@@ -698,8 +646,6 @@ h1, h2 { text-wrap: balance; }
 .facts dd a { color: var(--sign); text-decoration: underline; text-underline-offset: 3px; }
 .facts dd a svg { display: inline-block; width: 12px; height: 12px; margin-left: 5px; vertical-align: -1px; }
 .facts__none { font-weight: 400; color: var(--ink-3); }
-.facts__source { margin: 4px 0 0; padding-top: 12px; border-top: 1px solid var(--line); font-size: 13px; color: var(--ink-3); }
-.facts__source a { color: var(--sign); text-underline-offset: 3px; }
 
 /* ───────── Footer: back to the sky, the city on the horizon ───────── */
 
@@ -735,14 +681,12 @@ h1, h2 { text-wrap: balance; }
   .hill { justify-self: stretch; max-width: none; }
   .board {
     grid-template-columns: minmax(0, 1fr);
-    grid-template-areas: "filters" "results" "note";
+    grid-template-areas: "filters" "results";
     margin-top: 28px;
   }
   .filters { position: static; flex-direction: row; flex-wrap: wrap; align-items: stretch; gap: 12px; }
   .kind { flex: 0 1 300px; }
   .search { flex: 1 1 240px; }
-  .note--aside { display: none; }
-  .note--after { display: block; grid-area: note; margin-top: 16px; }
   .profile { grid-template-columns: auto minmax(0, 1fr); }
   .profile__act { grid-column: 1 / -1; }
   .sheet {
@@ -764,10 +708,6 @@ h1, h2 { text-wrap: balance; }
   .brand { gap: 10px; }
   .brand img { width: 38px; height: 38px; border-radius: 10px; }
   .brand__name { font-size: 16px; }
-  .brand__sub { font-size: 12px; }
-  .cta { font-size: 14px; padding: 11px 16px; }
-  .cta__long { display: none; }
-  .cta__short { display: inline; }
   .tabs { gap: 8px; margin-top: -24px; }
   .tab { font-size: 14px; gap: 7px; padding: 16px 13px; }
   .tab__long { display: none; }
@@ -801,7 +741,6 @@ h1, h2 { text-wrap: balance; }
 }
 
 @media (max-width: 400px) {
-  .brand__sub { display: none; }
   .tab { padding: 16px 11px; }
 }
 

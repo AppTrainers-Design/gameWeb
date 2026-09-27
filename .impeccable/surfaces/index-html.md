@@ -13,7 +13,7 @@ related_targets: []
 
 - Audience: people exploring Jordan's game industry (inferred).
 - Job: find Jordanian studios, publishers, indie developers, and university programmes, then open their pages.
-- Content: 12 studios and publishers, 14 indie developers, and 5 universities from 962Games, plus the three 962Games headline figures. Every card, the two "coming soon" indies included, opens its listing page (user request, 2026-09-27).
+- Content: 12 studios and publishers, 14 indie developers, and 5 universities, plus the three headline figures. Every card, the two "coming soon" indies included, opens its listing page (user request, 2026-09-27).
 - Constraints: English only; static HTML/CSS/JS; no invented jobs, events, or cities; no GameCompanies branding. The layout idea (title and figures, tabs, filters, card grid) comes from gamecompanies.com. The user asked for a better design with the same idea.
 
 ## Direction contract
@@ -44,4 +44,4 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
 ## Unresolved
 
-- The "Add your studio" links point to the 962Games registration form (forms.maysalward.com/mLizav). Confirm with the user, or swap in the site's own form.
+- The "Add your studio" links and every source credit were removed on 2026-09-27 at the user's request. The site now has no registration route; add one if studios should be able to apply.

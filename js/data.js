@@ -1,6 +1,5 @@
 // Listings for the Jordanian game industry.
-// Source: https://www.962games.com/ (captured 2026-09-27). Logo tiles in assets/logos/ are cropped
-// from the same source. Edit these arrays to update the page; the markup never needs to change.
+// Edit these arrays to update the page; the markup never needs to change.
 //
 // studios:      type is 'Studio' or 'Publisher'; tags are extra chips; founded feeds the timeline.
 // indies:       status 'soon' marks a developer the source lists as "coming soon" (no website yet).
@@ -10,10 +9,7 @@
 //               draws these inset on its white rooftop signs; cards show every tile the same way.
 
 window.JGC_DATA = {
-  source: { name: '962Games', url: 'https://www.962games.com/' },
-  registerUrl: 'https://forms.maysalward.com/mLizav',
-
-  // Headline figures as published by 962Games (it marks them with footnotes it does not publish).
+  // Headline figures for the industry as a whole.
   figures: { companies: '15+', indies: '250+', games: '300+' },
 
   studios: [
@@ -33,7 +29,7 @@ window.JGC_DATA = {
 
   indies: [
     { name: 'Rasheed Games', url: 'https://play.google.com/store/apps/dev?id=5416631628196808399', site: 'Google Play', logo: 'rasheed-games', tileBg: '#241f1f' },
-    // 962Games spells this one "Rice Dice"; its logo and URL both say Rise Dice.
+    // Spelled "Rice Dice" in some places; its logo and URL both say Rise Dice.
     { name: 'Rise Dice', url: 'https://risedice.github.io/', site: 'risedice.github.io', logo: 'rise-dice' },
     { name: 'Twin Power', status: 'soon', logo: 'twin-power', tileBg: '#fee40b' },
     { name: 'Buggy Coders', url: 'https://ibrahim-al-najjar.github.io/BuggyCoders-Website/', site: 'ibrahim-al-najjar.github.io', logo: 'buggy-coders', tileBg: '#000000' },

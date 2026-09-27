@@ -194,7 +194,7 @@ A two-ground palette, sky blue over limestone and stone, with sign blue for wayf
 - **Amman Sky** (sky): the header and footer field and the `theme-color`. Everything on it is white. Never used as a text or button color on the stone ground.
 
 ### Secondary
-- **Enamel Sign Blue** (sign-blue): the street-sign plates (top nav, tabs, the hill's year plates), the inked brand color of the "Add your studio" pill text, the filled "Visit website" pill on stone, text links on the stone ground ("Register on 962Games", the information panel's values), the focus ring on stone, and the search caret. Hover lightens it to **Sign Blue, Lit** (sign-blue-hover).
+- **Enamel Sign Blue** (sign-blue): the street-sign plates (top nav, tabs, the hill's year plates), the filled "Visit website" pill on stone, text links on the stone ground (the information panel's values), the focus ring on stone, and the search caret. Hover lightens it to **Sign Blue, Lit** (sign-blue-hover).
 
 ### Tertiary
 - **Taxi Yellow** (taxi-yellow): the active tab, the active type-filter segment, and the ring that closes in on a card when the visitor arrives at it from a listing page or a deep link. It never appears on a listing page. Text on it is always ink. It never appears on hover, on decoration, or on anything inactive.
@@ -306,7 +306,7 @@ Paper, 1px hairline, 10px radius, card-rest shadow, minimum height 106px. A 96px
 Pills of 12px, weight 500, padding 5px 9px. Type chips are filled chip-wash on ink-muted. Year and "soon" chips are outlined with an inset hairline on ink-faint, and the year chip carries a small house icon.
 
 ### Information panel
-The listing page's facts, on paper with a hairline border, 10px radius, card-rest shadow, padding 18px 20px 16px, and a 16px/600 "Information" heading. Rows are a definition list (104px label column, 12px gap, 11px vertical padding) split by hairlines: Website, Type, Founded, Location, Listed in; universities show Programme and Programme page instead of Website. Links are sign blue and underlined; long domains break at dots and hyphens. A missing site reads "Coming soon" or "Not listed" at 400 in ink-faint. A "Listing from 962Games" line closes it above a final hairline. It sits in a sticky side column (24px from the top) above the "Missing from the list?" note.
+The listing page's facts, on paper with a hairline border, 10px radius, card-rest shadow, padding 18px 20px 16px, and a 16px/600 "Information" heading. Rows are a definition list (104px label column, 12px gap, 11px vertical padding) split by hairlines: Website, Type, Founded, Location, Listed in; universities show Programme and Programme page instead of Website. Links are sign blue and underlined; long domains break at dots and hyphens. A missing site reads "Coming soon" or "Not listed" at 400 in ink-faint. It sits in a sticky side column, 24px from the top.
 
 ### Notes and empty state
 Paper panels with a hairline border and 10px radius. They have a 16px/600 heading, 14px ink-muted text, and a sign-blue underlined link. The empty state adds a quiet pill button ("Clear search") and the register link.

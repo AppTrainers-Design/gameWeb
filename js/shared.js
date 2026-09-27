@@ -25,8 +25,6 @@
 
   /* ───────── Text bound to the data ───────── */
 
-  $$('[data-register]').forEach((a) => { a.href = D.registerUrl; });
-  $$('[data-source]').forEach((a) => { a.href = D.source.url; });
   $$('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
 
   /* ───────── Cards ───────── */

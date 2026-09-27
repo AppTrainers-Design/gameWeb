@@ -37,14 +37,14 @@ A Jordan-only scope. Studios, publishers, indie developers, and game-development
 
 ## Evidence on Hand
 
-- The listings come from https://www.962games.com/, the source the user supplied, captured on 2026-09-27. There are:
+- The listings were captured on 2026-09-27 from a public directory the user supplied. On 2026-09-27 the user asked that every link and credit back to that source be removed, so the site names no source. There are:
   - 12 studios and publishers, each with a founding year and a type;
   - 14 indie developers, two of them marked "coming soon";
   - 5 universities, each with a programme name.
-- Headline figures from 962Games: 15+ gaming companies, 250+ indie developers, and 300+ published games. 962Games marks each figure with an asterisk but publishes no footnote.
-- Logos come from 962games.com and are cropped into 240px tiles in `assets/logos/`.
+- Headline figures: 15+ gaming companies, 250+ indie developers, and 300+ published games. The source marked each figure with an asterisk but published no footnote.
+- Logos are cropped into 240px tiles in `assets/logos/` and belong to their companies.
 - The source has no cities, events, jobs, company descriptions, or game catalogue. None of these may be invented.
-- Known source discrepancy: 962Games spells one indie studio "Rice Dice", but its logo and URL (risedice.github.io) say "Rise Dice". The page uses "Rise Dice".
+- Known source discrepancy: one indie studio was listed as "Rice Dice", but its logo and URL (risedice.github.io) say "Rise Dice". The page uses "Rise Dice".
 
 ## Product Principles
 
