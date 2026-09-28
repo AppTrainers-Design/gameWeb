@@ -80,7 +80,6 @@ rounded:
   plate: "6px"
   field: "8px"
   card: "10px"
-  brand-badge: "8px"
   logo-hero: "18px"
   pill: "999px"
 spacing:
@@ -265,16 +264,16 @@ Depth comes from the isometric drawing and from soft, downward cast shadows unde
 ### Shadow Vocabulary
 - **Card rest** (`box-shadow: 0 12px 24px -16px rgba(22, 24, 29, .38)`): listing cards, the information panel, the listing page's framed logo tile, and the Visit pill at rest on stone.
 - **Card lift** (`box-shadow: 0 20px 32px -18px rgba(22, 24, 29, .45)`): a linked card on hover, together with a 2px rise; the Visit pill on hover, with a 1px rise.
-- **Sky cast** (`box-shadow: 0 12px 20px -12px rgba(8, 18, 48, .7)`): tabs, sign plates, the "Add your studio" pill, the logo badge, and the tooltip, which are objects standing on or over the sky.
+- **Sky cast** (`box-shadow: 0 12px 20px -12px rgba(8, 18, 48, .7)`): tabs, sign plates, the "Add your studio" pill, and the tooltip, which are objects standing on or over the sky.
 
 ### Named Rules
 **The Contact Shadow Rule.** Every shadow falls straight down, with its spread negative enough that it stays inside the object's footprint. No zero-blur offsets and no colored glows.
 
 ## Shapes
 
-Corners are softly rounded and scale with object size. Sign plates are 6px, with an inner white rule inset 3–4px at 4px radius. Fields, segments, and logo tiles are 8px. Cards and notes are 10px. The International Trade Centre logo sits on a white badge with an 8px radius in the header and footer. The listing page's logo is the one large tile: 116px at a 12px radius with a hairline ring, inside a 6px paper frame with a 1px hairline border at 18px (80px, 10px, 5px and 15px on mobile). Anything that is an action rather than a place is a full pill (999px): the "Add your studio" CTA, the "Visit website" pill, chips, and the quiet button. In cards, logos always sit on the same 76px tile with an 8px radius and a 1px hairline ring, whatever their native shape. The breadcrumb's chevrons are drawn in CSS (two 1.5px borders on a 6px square, rotated), not glyphs. The hill's rooftop signs are white squares with a 3px radius and an ink stroke.
+Corners are softly rounded and scale with object size. Sign plates are 6px, with an inner white rule inset 3–4px at 4px radius. Fields, segments, and logo tiles are 8px. Cards and notes are 10px. The International Trade Centre logo sits directly on the blue sky in the header and footer, with its wordmark rendered white for contrast. The listing page's logo is the one large tile: 116px at a 12px radius with a hairline ring, inside a 6px paper frame with a 1px hairline border at 18px (80px, 10px, 5px and 15px on mobile). Anything that is an action rather than a place is a full pill (999px): the "Add your studio" CTA, the "Visit website" pill, chips, and the quiet button. In cards, logos always sit on the same 76px tile with an 8px radius and a 1px hairline ring, whatever their native shape. The breadcrumb's chevrons are drawn in CSS (two 1.5px borders on a 6px square, rotated), not glyphs. The hill's rooftop signs are white squares with a 3px radius and an ink stroke.
 
-The header and footer use the full International Trade Centre wordmark on white. Its multicolored mark is the browser icon.
+The header and footer use the full International Trade Centre logo on transparent blue sky: the multicolored mark stays intact and the wordmark is white. Its mark alone is the browser icon.
 
 ## Components
 

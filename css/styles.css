@@ -96,13 +96,9 @@ h1, h2 { text-wrap: balance; }
   display: inline-flex;
   align-items: center;
   justify-self: start;
-  padding: 8px 10px;
-  background: var(--paper);
-  border-radius: 8px;
-  box-shadow: 0 8px 16px -10px rgba(8, 18, 48, .6);
   text-decoration: none;
 }
-.brand img { width: 164px; height: auto; }
+.brand img { width: 190px; height: auto; }
 
 .signs { display: flex; gap: 10px; }
 
@@ -754,8 +750,7 @@ h1, h2 { text-wrap: balance; }
   .topbar { grid-template-columns: minmax(0, 1fr) auto; row-gap: 16px; padding-top: 14px; }
   .signs { grid-column: 1 / -1; grid-row: 2; justify-content: center; }
   .sign { font-size: 13px; padding: 10px 13px; }
-  .brand { padding: 6px 8px; }
-  .brand img { width: 140px; }
+  .brand img { width: 158px; }
   .tabs { gap: 8px; margin-top: -24px; }
   .tab { font-size: 14px; gap: 7px; padding: 16px 13px; }
   .tab__long { display: none; }
