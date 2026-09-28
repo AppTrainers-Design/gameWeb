@@ -1,11 +1,13 @@
 /* Jordan Game Companies: the Jordanian game industry drawn as Amman.
-   Sky field, limestone houses, blue enamel street signs; taxi yellow marks the active item and nothing else. */
+   Sky field, limestone houses, navy enamel street signs; crimson marks the active item and nothing else.
+   Navy, link blue and crimson are the International Trade Centre logo's own colors. */
 
 :root {
   --sky: #2f6be5;
-  --sign: #1b4ba8;
-  --sign-hover: #2357bf;
-  --taxi: #ffc61a;
+  --sign: #132e50;
+  --sign-hover: #1c446b;
+  --link: #1a70a8;
+  --accent: #dd0957;
   --ink: #16181d;
   --ink-2: #414a5c;
   --ink-3: #5b6475;
@@ -228,8 +230,7 @@ h1, h2 { text-wrap: balance; }
   box-shadow: 0 12px 20px -12px rgba(8, 18, 48, .7);
 }
 .tab::after { inset: 4px; }
-.tab[aria-selected="true"] { background: var(--taxi); color: var(--ink); }
-.tab[aria-selected="true"]::after { border-color: rgba(22, 24, 29, .85); }
+.tab[aria-selected="true"] { background: var(--accent); }
 .tab:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 .tab__count { font-weight: 300; font-variant-numeric: tabular-nums; }
 .tab__short { display: none; }
@@ -276,7 +277,7 @@ h1, h2 { text-wrap: balance; }
 }
 .kind button:first-child { border-left: 0; }
 .kind button:hover { background: var(--chip); }
-.kind button[aria-checked="true"] { background: var(--taxi); color: var(--ink); font-weight: 500; }
+.kind button[aria-checked="true"] { background: var(--accent); color: #fff; font-weight: 500; }
 .kind button:focus-visible { outline-offset: -3px; }
 
 .search { position: relative; }
@@ -419,14 +420,14 @@ h1, h2 { text-wrap: balance; }
   opacity: 0;
   transition: opacity .15s ease, transform .22s var(--ease-out);
 }
-.card:hover .card__go, .card:focus-visible .card__go { opacity: 1; transform: translateX(2px); color: var(--sign); }
+.card:hover .card__go, .card:focus-visible .card__go { opacity: 1; transform: translateX(2px); color: var(--link); }
 @media (hover: none) { .card__go { opacity: .8; } }
 
-/* Arrived from the hill or a deep link: a taxi-yellow ring closes in on the card. */
-.card.is-lit { outline: 3px solid var(--taxi); outline-offset: 3px; animation: lit .7s var(--ease-out); }
+/* Arrived from the hill or a deep link: a crimson ring closes in on the card. */
+.card.is-lit { outline: 3px solid var(--accent); outline-offset: 3px; animation: lit .7s var(--ease-out); }
 @keyframes lit {
-  from { outline-offset: 16px; outline-color: rgba(255, 198, 26, 0); }
-  to { outline-offset: 3px; outline-color: var(--taxi); }
+  from { outline-offset: 16px; outline-color: rgba(221, 9, 87, 0); }
+  to { outline-offset: 3px; outline-color: var(--accent); }
 }
 
 .empty {
@@ -493,7 +494,7 @@ h1, h2 { text-wrap: balance; }
   opacity: .7;
 }
 .crumbs a { color: var(--ink-2); text-decoration: none; }
-.crumbs a:hover { color: var(--sign); text-decoration: underline; text-underline-offset: 3px; }
+.crumbs a:hover { color: var(--link); text-decoration: underline; text-underline-offset: 3px; }
 .crumbs [aria-current] { color: var(--ink); font-weight: 500; }
 
 /* The profile head: logo, name and type, and the way out to the listing's site. */
@@ -526,11 +527,11 @@ h1, h2 { text-wrap: balance; }
 /* The tagline says what the listing is; the facts line under it steps back a shade. */
 .profile__tag { margin: 12px 0 0; max-width: 60ch; font-size: 17px; line-height: 1.5; color: var(--ink-2); text-wrap: pretty; }
 .profile__tag + .profile__meta { margin-top: 8px; font-size: 15px; color: var(--ink-3); }
-.profile__meta a { color: var(--sign); font-weight: 500; text-underline-offset: 3px; }
+.profile__meta a { color: var(--link); font-weight: 500; text-underline-offset: 3px; }
 .profile--missing { grid-template-columns: minmax(0, 1fr); align-items: start; margin-top: 40px; }
 .profile--missing .profile__act { padding-top: 8px; }
 
-/* The one way out to the listing's own site: an action, so a pill; sign blue, because it is a way to go. */
+/* The one way out to the listing's own site: an action, so a pill; navy, because it is a way to go. */
 .btn-visit {
   display: inline-flex;
   align-items: center;
@@ -565,7 +566,7 @@ h1, h2 { text-wrap: balance; }
 .about p { margin: 12px 0 0; max-width: 62ch; font-size: 17px; line-height: 1.65; color: var(--ink-2); text-wrap: pretty; }
 .about h2 + p { margin-top: 14px; }
 .about b { font-weight: 500; color: var(--ink); }
-.about a { color: var(--sign); font-weight: 500; text-underline-offset: 3px; }
+.about a { color: var(--link); font-weight: 500; text-underline-offset: 3px; }
 /* The directory's own line on the studio closes the About, a step quieter than the profile. */
 .about .about__standing { margin-top: 16px; font-size: 15px; line-height: 1.6; color: var(--ink-3); }
 
@@ -601,7 +602,7 @@ h1, h2 { text-wrap: balance; }
 .game:focus { outline: none; }
 .game:focus-visible { outline: 2px solid var(--sign); outline-offset: 3px; }
 .game__name { font-size: 16px; font-weight: 500; line-height: 1.3; }
-.game--link:hover .game__name { color: var(--sign); }
+.game--link:hover .game__name { color: var(--link); }
 .game__meta { font-size: 13px; line-height: 1.45; color: var(--ink-3); font-variant-numeric: tabular-nums; }
 .game__year { font-weight: 500; color: var(--ink-2); }
 .game__blurb { font-size: 14px; line-height: 1.5; color: var(--ink-2); text-wrap: pretty; }
@@ -613,7 +614,7 @@ h1, h2 { text-wrap: balance; }
   color: var(--ink-3);
   transition: color .15s ease, transform .22s var(--ease-out);
 }
-.game--link:hover .game__go { color: var(--sign); transform: translate(1px, -1px); }
+.game--link:hover .game__go { color: var(--link); transform: translate(1px, -1px); }
 .games__all { margin-top: 16px; }
 .more__head {
   display: flex;
@@ -629,7 +630,7 @@ h1, h2 { text-wrap: balance; }
   gap: 6px;
   font-size: 15px;
   font-weight: 500;
-  color: var(--sign);
+  color: var(--link);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -668,7 +669,7 @@ h1, h2 { text-wrap: balance; }
   overflow-wrap: break-word;
   font-variant-numeric: tabular-nums;
 }
-.facts dd a { color: var(--sign); text-decoration: underline; text-underline-offset: 3px; }
+.facts dd a { color: var(--link); text-decoration: underline; text-underline-offset: 3px; }
 .facts dd a svg { display: inline-block; width: 12px; height: 12px; margin-left: 5px; vertical-align: -1px; }
 .facts__none { font-weight: 400; color: var(--ink-3); }
 .facts__line { display: block; }
@@ -692,7 +693,7 @@ h1, h2 { text-wrap: balance; }
   text-decoration: none;
   transition: background-color .15s ease, color .15s ease;
 }
-.facts dd a.social:hover { background: var(--chip); color: var(--sign); }
+.facts dd a.social:hover { background: var(--chip); color: var(--link); }
 .facts dd a.social svg { width: 16px; height: 16px; margin: 0; vertical-align: 0; }
 
 /* ───────── Footer: back to the sky, the city on the horizon ───────── */

@@ -3,9 +3,10 @@ name: Jordan Game Companies
 description: Jordan's game industry drawn as Amman, a limestone hill under open sky with a street-level directory below.
 colors:
   sky: "#2f6be5"
-  sign-blue: "#1b4ba8"
-  sign-blue-hover: "#2357bf"
-  taxi-yellow: "#ffc61a"
+  sign-blue: "#132e50"
+  sign-blue-hover: "#1c446b"
+  link-blue: "#1a70a8"
+  crimson: "#dd0957"
   ink: "#16181d"
   ink-muted: "#414a5c"
   ink-faint: "#5b6475"
@@ -106,8 +107,8 @@ components:
     rounded: "{rounded.plate}"
     padding: "18px 20px"
   tab-active:
-    backgroundColor: "{colors.taxi-yellow}"
-    textColor: "{colors.ink}"
+    backgroundColor: "{colors.crimson}"
+    textColor: "{colors.paper}"
   cta-pill:
     backgroundColor: "{colors.paper}"
     textColor: "{colors.sign-blue}"
@@ -128,8 +129,8 @@ components:
   segment-hover:
     backgroundColor: "{colors.chip-wash}"
   segment-active:
-    backgroundColor: "{colors.taxi-yellow}"
-    textColor: "{colors.ink}"
+    backgroundColor: "{colors.crimson}"
+    textColor: "{colors.paper}"
   search-field:
     backgroundColor: "{colors.paper}"
     textColor: "{colors.ink}"
@@ -174,29 +175,30 @@ components:
 
 The industry is drawn as the city. Above, an open field of sky blue holds the title, the figures, and an isometric limestone hill where every studio is a house standing on the terrace of its founding year, with its logo on a white rooftop sign. Below, the page drops to street level: a pale stone ground where the directory lives as white cards. The footer returns to the sky, with the city's skyline on the horizon. Sections are stacked blocks of sky and stone; there are no divider rules between them.
 
-Navigation is signage. Every navigational control is a blue enamel street plate with an inset white rule, and the one item that is currently active turns taxi yellow. That is the whole accent vocabulary: blue says "this is a way to go", yellow says "you are here". The type is one family, Readex Pro, and hierarchy comes from size and weight alone.
+Navigation is signage. Every navigational control is a navy enamel street plate with an inset white rule, and the one item that is currently active turns crimson. That is the whole accent vocabulary: navy says "this is a way to go", crimson says "you are here". Both come from the International Trade Centre logo, as does the blue of text links; only the sky keeps its own blue. The type is one family, Readex Pro, and hierarchy comes from size and weight alone.
 
 The density is calm and operational: 26 listings across two tabs, readable at a glance, each one click from its own page on the site. That page is a company profile with no hero: the sky is only its top bar and its footer, and everything between them (breadcrumb, framed logo tile, name, facts, and more of the category) stands on stone. The hill is the only illustration, it appears only in the directory, and it is one fixed drawing, approved by the user as it stands; it scales with its container and never reflows into a different composition.
 
 **Key Characteristics:**
 - Two grounds: sky (#2f6be5) above and in the footer, stone (#f7f8fa) at street level between them.
-- Blue enamel sign plates for every navigational control; taxi yellow only on the active item.
+- Navy enamel sign plates for every navigational control; crimson only on the active item. Both are the ITC logo's own colors.
 - One typeface (Readex Pro, variable 160–700), with hierarchy carried by size and weight.
 - White paper cards with hairline borders and a soft, low, downward shadow.
 - An isometric limestone hill, built year by year on entrance, as the signature drawing.
 
 ## Colors
 
-A two-ground palette, sky blue over limestone and stone, with sign blue for wayfinding and a single taxi-yellow accent for the active state.
+A two-ground palette, sky blue over limestone and stone. Wayfinding, links and the active state take their colors from the International Trade Centre logo (navy #132e50, blue #3e9ad5, crimson #dd0957): navy for the sign plates, a deepened logo blue for text links, and a single crimson accent for the active state.
 
 ### Primary
 - **Amman Sky** (sky): the header and footer field and the `theme-color`. Everything on it is white. Never used as a text or button color on the stone ground.
 
 ### Secondary
-- **Enamel Sign Blue** (sign-blue): the street-sign plates (top nav and tabs), the filled "Visit website" pill on stone, text links on the stone ground (the information panel's values), the focus ring on stone, and the search caret. Hover lightens it to **Sign Blue, Lit** (sign-blue-hover).
+- **ITC Navy** (sign-blue): the logo's navy, exactly. The street-sign plates (top nav and tabs), the filled "Visit website" pill on stone, the focus ring on stone, and the search caret. Hover lightens it toward the logo blue: **ITC Navy, Lit** (sign-blue-hover).
+- **ITC Blue** (link-blue): the logo's #3e9ad5, deepened until it clears 5:1 on stone. Text links on stone and paper (the About text, the profile line, the information panel's values, the "All N" link), and the hover color of breadcrumb links, linked game names, card and game arrows, and social marks.
 
 ### Tertiary
-- **Taxi Yellow** (taxi-yellow): the active tab, the active type-filter segment, and the ring that closes in on a card when the visitor arrives at it from a listing page or a deep link. It never appears on a listing page. Text on it is always ink. It never appears on hover, on decoration, or on anything inactive.
+- **ITC Crimson** (crimson): the logo's crimson, exactly. The active tab, the active type-filter segment, and the ring that closes in on a card when the visitor arrives at it from a listing page or a deep link. It never appears on a listing page. Text on it is always white, and the active tab keeps its white inset rule. It never appears on hover, on decoration, or on anything inactive.
 
 ### Neutral
 - **Ink** (ink): primary text on stone and paper; the hill tooltip background; the water tanks and sign posts in the hill.
@@ -212,7 +214,7 @@ A two-ground palette, sky blue over limestone and stone, with sign blue for wayf
 The hill is lit from the upper left. Houses use paper for the lit top, **Limestone Shade** (limestone-shade) for the front wall, and **Limestone Deep** (limestone-deep) for the side wall. Terraces use **Terrace Top** (terrace-top), **Terrace Side** (terrace-side), and **Terrace Deep** (terrace-deep), with stone-course lines (#b9c4d4 front, #9aa8be side). Windows are **Window Dark** (window-dark); doors sit on the shaded wall in #8795ad. The footer skyline repeats the same isometric city in tints of the sky (#4a76dc to #a4c0f6), so it reads as distance, not as a second drawing.
 
 ### Named Rules
-**The Taxi Rule.** Taxi yellow marks the one active item in a group and nothing else. If an element is not the current tab, the current segment, or the card you just arrived at, it is not yellow.
+**The Crimson Rule.** Crimson marks the one active item in a group and nothing else. If an element is not the current tab, the current segment, or the card you just arrived at, it is not crimson.
 
 **The Two Grounds Rule.** A section is either sky or stone. Sections meet at a straight edge with no divider rule. On the sky, everything is white. On stone, surfaces are paper.
 
@@ -273,42 +275,42 @@ Depth comes from the isometric drawing and from soft, downward cast shadows unde
 
 Corners are softly rounded and scale with object size. Sign plates are 6px, with an inner white rule inset 3–4px at 4px radius. Fields, segments, and logo tiles are 8px. Cards and notes are 10px. The International Trade Centre logo sits directly on the blue sky in the header and footer, with its wordmark rendered white for contrast. The listing page's logo is the one large tile: 116px at a 12px radius with a hairline ring, inside a 6px paper frame with a 1px hairline border at 18px (80px, 10px, 5px and 15px on mobile). Anything that is an action rather than a place is a full pill (999px): the "Add your studio" CTA, the "Visit website" pill, chips, and the quiet button. In cards, logos always sit on the same 76px tile with an 8px radius and a 1px hairline ring, whatever their native shape. The breadcrumb's chevrons are drawn in CSS (two 1.5px borders on a 6px square, rotated), not glyphs. The hill's rooftop signs are white squares with a 3px radius and an ink stroke.
 
-The header and footer use the full International Trade Centre logo on transparent blue sky: the multicolored mark stays intact and the wordmark is white. Its mark alone is the browser icon.
+The header and footer use the full International Trade Centre logo on transparent blue sky: the multicolored mark stays intact and the wordmark is white. Its mark alone is the browser icon. Its navy, blue and crimson are the site's wayfinding, link and active colors.
 
 ## Components
 
 ### Sign plates (top nav)
-Blue enamel street signs. Sign blue, white 500 label, 6px radius, padding 11px 16px, sky-cast shadow, and a 1.5px inset white rule (rgba(255,255,255,.92)) at 3px. Hover lightens to sign-blue-hover. Active presses down 1px.
+Navy enamel street signs. ITC navy, white 500 label, 6px radius, padding 11px 16px, sky-cast shadow, and a 1.5px inset white rule (rgba(255,255,255,.92)) at 3px. Hover lightens to sign-blue-hover. Active presses down 1px.
 
 ### Tabs
-The same sign plate, larger (padding 18px 20px, rule inset 4px), with the count in weight 300. The selected tab turns taxi yellow with ink text, and its inset rule turns ink (rgba(22,24,29,.85)). Arrow keys, Home, End, and keys 1–2 switch tabs, and each tab has a hash (#studios, #indies). On mobile, labels shorten ("Studios", "Indies").
+The same sign plate, larger (padding 18px 20px, rule inset 4px), with the count in weight 300. The selected tab turns crimson; its text and inset rule stay white. Arrow keys, Home, End, and keys 1–2 switch tabs, and each tab has a hash (#studios, #indies). On mobile, labels shorten ("Studios", "Indies").
 
 ### "Add your studio" pill
 A white pill on the sky with sign-blue 600 text, padding 14px 22px, an external-link icon, and a sky-cast shadow. Hover rises 1px and the shadow deepens. In the directory it is present in every view: top bar, the side or after note, the empty state, and the footer. On a listing page it is in the top bar, and the side column's "Missing from the list?" note carries the register link.
 
 ### "Visit website" pill
-The listing page's one way out to the listing's own site: an action, so a pill; sign blue, because it is a way to go. Sign blue, white 600 15px, padding 15px 22px, a 14px external-link icon, card-rest shadow on stone. Hover lightens to sign-blue-hover, rises 1px, and takes card lift. Full width on mobile. Store-only listings read "Open on Google Play"; a listing with no URL has no pill. The not-found page uses the same pill, with a forward arrow, for "Browse the directory".
+The listing page's one way out to the listing's own site: an action, so a pill; navy, because it is a way to go. ITC navy, white 600 15px, padding 15px 22px, a 14px external-link icon, card-rest shadow on stone. Hover lightens to sign-blue-hover, rises 1px, and takes card lift. Full width on mobile. Store-only listings read "Open on Google Play"; a listing with no URL has no pill. The not-found page uses the same pill, with a forward arrow, for "Browse the directory".
 
 ### Breadcrumb
-The first row of the street on a listing page, on stone: 14px ink-faint text with CSS-drawn chevrons at 70% opacity between crumbs ("Jordanian game industry › Studios & publishers › Maysalward"). Links are ink-muted with no underline; on hover they turn sign blue and underline (3px offset). The current crumb is ink at 500. On phones it collapses to one back crumb with a left chevron, naming the category. The category crumb links to `index.html#<tab>/<slug>`, so the card lights on return.
+The first row of the street on a listing page, on stone: 14px ink-faint text with CSS-drawn chevrons at 70% opacity between crumbs ("Jordanian game industry › Studios & publishers › Maysalward"). Links are ink-muted with no underline; on hover they turn link blue and underline (3px offset). The current crumb is ink at 500. On phones it collapses to one back crumb with a left chevron, naming the category. The category crumb links to `index.html#<tab>/<slug>`, so the card lights on return.
 
 ### Type filter (segmented control)
-A paper strip with a hairline border and 8px radius, split by hairlines. Inactive segments are ink-muted 14px. Hover washes with chip-wash. The checked segment is taxi yellow with ink 500 text.
+A paper strip with a hairline border and 8px radius, split by hairlines. Inactive segments are ink-muted 14px. Hover washes with chip-wash. The checked segment is crimson with white 500 text.
 
 ### Search field
 Paper, hairline border, 8px radius, a leading search icon in ink-faint, and a trailing "/" key hint (12px, stone fill, hairline, 5px radius) that hides once there is text. Hover darkens the border to hairline-strong. Focus replaces the border with a 2px sign-blue outline. The clear button is a 32px, 6px-radius square that washes chip-wash on hover.
 
 ### Listing cards
-Paper, 1px hairline, 10px radius, card-rest shadow, minimum height 106px. A 96px logo column (hairline divider on its right) holds the 76px logo tile. The body holds the name (500, 16px), a meta line (13px, ink-faint), and chips. Every card, "coming soon" included, opens that listing's page on this site (`listing.html?id=<slug>`). In the directory, cards open it in a new tab (with a visually hidden "opens in a new tab" note), so the visitor's place in the list stays put; on a listing page, cards for other listings open in the same tab. Cards rise 2px to card-lift on hover and reveal a right arrow at the top right that steps 2px forward and turns sign blue. External-link icons are only for links that leave the site. A card reached from a listing page's breadcrumb or "Listed in" link, or from a deep link, gets a 3px taxi-yellow outline that closes in from 16px to 3px offset over .7s.
+Paper, 1px hairline, 10px radius, card-rest shadow, minimum height 106px. A 96px logo column (hairline divider on its right) holds the 76px logo tile. The body holds the name (500, 16px), a meta line (13px, ink-faint), and chips. Every card, "coming soon" included, opens that listing's page on this site (`listing.html?id=<slug>`). In the directory, cards open it in a new tab (with a visually hidden "opens in a new tab" note), so the visitor's place in the list stays put; on a listing page, cards for other listings open in the same tab. Cards rise 2px to card-lift on hover and reveal a right arrow at the top right that steps 2px forward and turns link blue. External-link icons are only for links that leave the site. A card reached from a listing page's breadcrumb or "Listed in" link, or from a deep link, gets a 3px crimson outline that closes in from 16px to 3px offset over .7s.
 
 ### Chips
 Pills of 12px, weight 500, padding 5px 9px. Type chips are filled chip-wash on ink-muted. Year and "soon" chips are outlined with an inset hairline on ink-faint, and the year chip carries a small house icon.
 
 ### Information panel
-The listing page's facts, on paper with a hairline border, 10px radius, card-rest shadow, padding 18px 20px 16px, and a 16px/600 "Information" heading. Rows are a definition list (104px label column, 12px gap, 11px vertical padding) split by hairlines, in this order: Website, Type, Founded, Company size, Headquarters, Address, Other office(s), Platforms, Led by / People, Follow, Listed in. A row appears only when the listing has that fact; Website, Type, Headquarters and Listed in are always there. Links are sign blue and underlined; long domains break at dots and hyphens. A missing site reads "Coming soon" or "Not listed" at 400 in ink-faint. The address has an "Open in Maps" link under it (13px/500, external-link icon). People are one name per line (500) with the role under it (13px/400 ink-faint). Follow holds the social links as 34px round paper buttons with an inset hairline and a 16px ink-muted mark (Simple Icons, CC0; LinkedIn drawn in-house); hover washes chip-wash and turns the mark sign blue. Each has a visually hidden name.
+The listing page's facts, on paper with a hairline border, 10px radius, card-rest shadow, padding 18px 20px 16px, and a 16px/600 "Information" heading. Rows are a definition list (104px label column, 12px gap, 11px vertical padding) split by hairlines, in this order: Website, Type, Founded, Company size, Headquarters, Address, Other office(s), Platforms, Led by / People, Follow, Listed in. A row appears only when the listing has that fact; Website, Type, Headquarters and Listed in are always there. Links are link blue and underlined; long domains break at dots and hyphens. A missing site reads "Coming soon" or "Not listed" at 400 in ink-faint. The address has an "Open in Maps" link under it (13px/500, external-link icon). People are one name per line (500) with the role under it (13px/400 ink-faint). Follow holds the social links as 34px round paper buttons with an inset hairline and a 16px ink-muted mark (Simple Icons, CC0; LinkedIn drawn in-house); hover washes chip-wash and turns the mark link blue. Each has a visually hidden name.
 
 ### Notes and empty state
-Paper panels with a hairline border and 10px radius. They have a 16px/600 heading, 14px ink-muted text, and a sign-blue underlined link. The empty state adds a quiet pill button ("Clear search") and the register link.
+Paper panels with a hairline border and 10px radius. They have a 16px/600 heading, 14px ink-muted text, and a link-blue underlined link. The empty state adds a quiet pill button ("Clear search") and the register link.
 
 ### Tooltip
 Ink, white 13px/500 text with the year at 300, 6px radius, padding 8px 11px, and a sky-cast shadow. It appears above a house only while it is hovered or focused, fading in over .12s, and is kept inside the screen edge. Nothing rests on the hill.
@@ -320,7 +322,7 @@ An isometric SVG drawn in `js/shared.js` (unit 31px, 30° projection). There is 
 `listing.html?id=<slug>` renders one listing as a company profile, with the fields of the user's reference profile (gamecompanies.com, 2026-09-27): tagline, About, Games, company size, headquarters and address, people, platforms and social links. The directory facts come from `js/data.js`; the profile comes from `js/profiles.js`, keyed by the same slug and researched from public sources. A listing with no profile, or a field it lacks, shows fewer sections; nothing is filled in to make a page look complete.
 - **Sky:** the same top bar, and nothing else; no hero, no hill.
 - **Profile head (stone):** the breadcrumb, then the framed logo tile, the name, the tagline when there is one (17px/1.5 ink-muted, max 60ch; 16px on mobile), the profile line ("type · Founded year · City, Jordan", without a year for indies; after a tagline it steps down to 15px ink-faint), and the "Visit website" pill on the right.
-- **Sheet (stone):** "About <name>" holds the profile's paragraphs; on studio pages it closes with one quieter line (15px ink-faint) on where the studio stands among the directory's studios (which studios share its year, with links, or that it is the oldest, the newest, or the only one founded that year). "Games" has its count at weight 300 and one paper tile per game, two across: name (16px/500), a meta line (year at 500, and a note such as "Published by Shusmo"), a 14px blurb, and platform chips. A game with a store page is a link: it rises 2px to card lift, its name turns sign blue, and an external-link icon sits at the top right. Past eight games, the first six show with a quiet "Show all N games" pill that reveals the rest and moves focus to the first one it revealed. "More <category>" has an "All N <category>" link and six listing cards two across: for studios, the six nearest in founding year, shown in founding order; for the rest, the next six names in the directory's order. The side column holds the information panel.
+- **Sheet (stone):** "About <name>" holds the profile's paragraphs; on studio pages it closes with one quieter line (15px ink-faint) on where the studio stands among the directory's studios (which studios share its year, with links, or that it is the oldest, the newest, or the only one founded that year). "Games" has its count at weight 300 and one paper tile per game, two across: name (16px/500), a meta line (year at 500, and a note such as "Published by Shusmo"), a 14px blurb, and platform chips. A game with a store page is a link: it rises 2px to card lift, its name turns link blue, and an external-link icon sits at the top right. Past eight games, the first six show with a quiet "Show all N games" pill that reveals the rest and moves focus to the first one it revealed. "More <category>" has an "All N <category>" link and six listing cards two across: for studios, the six nearest in founding year, shown in founding order; for the rest, the next six names in the directory's order. The side column holds the information panel.
 - **Unknown slug:** "We couldn't find that listing" on stone under the top bar, with a line naming the slug and a "Browse the directory" pill; no sheet.
 
 ### Footer skyline
@@ -329,8 +331,8 @@ The footer is sky with a repeating isometric skyline strip (1600 × 92px) in sky
 ## Do's and Don'ts
 
 ### Do:
-- **Do** make every navigational control a sign-blue plate with its inset white rule, and turn only the active one taxi yellow with ink text. The breadcrumb is the one text wayfinding row: on stone, ink-faint with ink-muted links, CSS-drawn chevrons.
-- **Do** keep text on the sky white, including focus rings and selection (rgba(255,255,255,.32)). On stone, focus rings are 2px sign blue with a 3px offset.
+- **Do** make every navigational control a navy sign plate with its inset white rule, and turn only the active one crimson, its text and rule still white. The breadcrumb is the one text wayfinding row: on stone, ink-faint with ink-muted links, CSS-drawn chevrons.
+- **Do** keep text on the sky white, including focus rings and selection (rgba(255,255,255,.32)). On stone, focus rings are 2px navy with a 3px offset.
 - **Do** separate sections by switching ground (sky and stone) at a straight edge, and let the tab row straddle that edge.
 - **Do** use hairlines (#dde3ec) inside components: card borders, the logo divider, and segment dividers.
 - **Do** put every card logo on the same 76px, 8px-radius tile with a hairline ring. The listing page's 116px framed tile is the only larger one.
@@ -340,7 +342,7 @@ The footer is sky with a repeating isometric skyline strip (1600 × 92px) in sky
 - **Do** scale the hill as one drawing on small screens.
 
 ### Don't:
-- **Don't** use taxi yellow for hover, emphasis, decoration, badges, or anything not currently active.
+- **Don't** use crimson for hover, emphasis, decoration, badges, or anything not currently active. The logo's own crimson is the one exception.
 - **Don't** put divider rules or borders between page sections. The ground change is the divider.
 - **Don't** add a second typeface, uppercase letter-spaced labels, or colored frames around names to build hierarchy.
 - **Don't** use hard offset or zero-blur shadows, or glows. Shadows are soft, downward, and negatively spread.
