@@ -44,7 +44,7 @@
     if (state.tab === 'studios' && state.kind !== 'all') list = list.filter((it) => it.type === state.kind);
     if (q) list = list.filter((it) => haystack(it).includes(q));
 
-    cardsEl.innerHTML = list.map((it) => cardHTML(state.tab, it, { newTab: true })).join('');
+    cardsEl.innerHTML = list.map((it) => cardHTML(state.tab, it)).join('');
     cardsEl.hidden = list.length === 0;
     emptyEl.hidden = list.length > 0;
     if (!list.length) {
@@ -165,7 +165,7 @@
 
   /* ───────── Start ───────── */
 
-  buildHill({ newTab: true });
+  buildHill();
   syncKind();
   const initial = HASH.exec(location.hash);
   if (initial) applyHash();

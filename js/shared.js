@@ -44,24 +44,21 @@
     return `<span class="chip">${esc(c)}</span>`;
   };
 
-  // Every card opens the listing's own page on this site; from the directory it opens in a new tab.
-  const tabAttrs = (newTab) => (newTab ? ' target="_blank" rel="noopener"' : '');
-  function cardHTML(tab, it, { newTab = false } = {}) {
+  // Every card opens the listing's own page on this site, in the same tab.
+  function cardHTML(tab, it) {
     const meta = META[tab](it);
     const chips = CHIPS[tab](it).map(chipHTML).join('');
-    return `<li><a class="card" id="${tab}-${esc(it.logo)}" href="${esc(listingHref(it))}"${tabAttrs(newTab)}>`
+    return `<li><a class="card" id="${tab}-${esc(it.logo)}" href="${esc(listingHref(it))}">`
       + `<span class="card__logo"><img src="${logoSrc(it.logo)}" alt="" width="76" height="76" loading="lazy" decoding="async"></span>`
       + `<span class="card__body"><span class="card__name">${esc(it.name)}</span>`
       + `<span class="card__meta">${esc(meta.text)}</span>`
       + `<span class="card__chips">${chips}</span></span>`
-      + '<svg class="card__go" aria-hidden="true"><use href="#i-go"/></svg>'
-      + `${newTab ? '<span class="vh"> (opens in a new tab)</span>' : ''}</a></li>`;
+      + '<svg class="card__go" aria-hidden="true"><use href="#i-go"/></svg></a></li>';
   }
 
   /* ───────── The hill: every studio as a limestone house at its founding year ───────── */
 
-  // newTab: houses open their studio's page in a new tab.
-  function buildHill({ newTab = false } = {}) {
+  function buildHill() {
     const figure = $('#hill');
     const svg = $('#hill-svg');
     const tip = $('.hill__tip');
@@ -142,8 +139,8 @@
             const ix = roof[0] - size / 2; const iy = sy + (SIGN - size) / 2;
             return `<image href="${logoSrc(st.s.logo)}" x="${ix.toFixed(1)}" y="${iy.toFixed(1)}" width="${size.toFixed(1)}" height="${size.toFixed(1)}" preserveAspectRatio="xMidYMid meet"/>`;
           })();
-        out += `<a class="house" href="${esc(listingHref(st.s))}"${tabAttrs(newTab)} data-k="${st.k}" data-name="${esc(st.s.name)}" data-year="${st.s.founded}"`
-          + ` aria-label="${esc(st.s.name)}, founded ${st.s.founded}${newTab ? ' (opens in a new tab)' : ''}" tabindex="${st.k === 0 ? 0 : -1}"><g>${g}</g></a>`;
+        out += `<a class="house" href="${esc(listingHref(st.s))}" data-k="${st.k}" data-name="${esc(st.s.name)}" data-year="${st.s.founded}"`
+          + ` aria-label="${esc(st.s.name)}, founded ${st.s.founded}" tabindex="${st.k === 0 ? 0 : -1}"><g>${g}</g></a>`;
       });
 
       const vx = minX - 10; const vy = minY - 10;
