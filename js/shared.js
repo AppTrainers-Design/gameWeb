@@ -70,15 +70,14 @@
     const first = list[0].founded;
     const last = list[list.length - 1].founded;
 
-    // One drawing at every width. On small screens only the year plates grow, and thin out, so they stay readable.
-    function draw(plateScale) {
+    // One drawing at every width; the SVG scales with its container.
+    function draw() {
       const U = 31; // px per unit
       const STEP = 1.32; // terrace depth along the street
       const DEPTH = 2.6; // terrace width across the street
       const HW = 1.35; // house width
       const HOUSE = 0.95; // house height
       const SIGN = 34; // rooftop sign
-      const PLATE = { w: 38 * plateScale, h: 16 * plateScale, font: 9 * plateScale, gap: plateScale > 1 ? 38 * plateScale + 8 : 0 };
       const slope = Math.min(0.1, 2.4 / Math.max(1, last - first));
       const zOf = (year) => 0.55 + (year - first) * slope;
       const P = (x, y, z) => [(x - y) * 0.866 * U, (x + y) * 0.5 * U - z * U];
@@ -102,15 +101,15 @@
       let t = 0;
       const steps = list.map((s, k) => {
         if (k) t += 1 + Math.min(1.4, Math.max(0, (s.founded - list[k - 1].founded - 1) * 0.12));
-        return { s, k, y: -t * STEP, z: zOf(s.founded), firstOfYear: k === 0 || list[k - 1].founded !== s.founded };
+        return { s, k, y: -t * STEP, z: zOf(s.founded) };
       });
       // A few empty years lengthen the terrace below them, so the walls stay one slab; only an empty decade breaks the hill.
       steps.forEach((st, k) => {
         const gap = steps[k + 1] ? st.y - (steps[k + 1].y + STEP) : 0;
         st.back = gap > 0 && gap < STEP ? gap : 0;
       });
-      // The street edge crops the hill's foot; on small screens the tabs overlap that edge, so leave room below the first house.
-      const cropY = P(DEPTH, STEP, 0)[1] + (plateScale > 1 ? 34 : 1);
+      // The street edge crops the hill's foot.
+      const cropY = P(DEPTH, STEP, 0)[1] + 1;
 
       let out = '';
       steps.slice().sort((a, b) => a.y - b.y).forEach((st) => {
@@ -146,25 +145,6 @@
         out += `<a class="house" href="${esc(listingHref(st.s))}"${tabAttrs(newTab)} data-k="${st.k}" data-name="${esc(st.s.name)}" data-year="${st.s.founded}"`
           + ` aria-label="${esc(st.s.name)}, founded ${st.s.founded}${newTab ? ' (opens in a new tab)' : ''}" tabindex="${st.k === 0 ? 0 : -1}"><g>${g}</g></a>`;
       });
-
-      // Street-name plates carry each year on the riser below its first house.
-      // Where plates would collide they thin out, but the newest year always keeps its plate.
-      const cands = steps.filter((st) => st.firstOfYear).map((st) => ({ st, a: P(DEPTH * 0.1, st.y + STEP, Math.max(0.22, st.z - 0.42)) }));
-      const keep = [];
-      cands.forEach((c) => { if (!keep.length || c.a[0] - keep[keep.length - 1].a[0] >= PLATE.gap) keep.push(c); });
-      const newest = cands[cands.length - 1];
-      if (keep[keep.length - 1] !== newest) {
-        while (keep.length && newest.a[0] - keep[keep.length - 1].a[0] < PLATE.gap) keep.pop();
-        keep.push(newest);
-      }
-      let plates = '';
-      keep.forEach(({ st, a }) => {
-        plates += `<g class="plate" data-year="${st.s.founded}" transform="translate(${a[0].toFixed(1)},${(a[1] - PLATE.h / 2).toFixed(1)})">`
-          + `<rect width="${PLATE.w}" height="${PLATE.h}" rx="2.5" fill="#1b4ba8"/>`
-          + `<rect x="2" y="2" width="${PLATE.w - 4}" height="${PLATE.h - 4}" rx="1.5" fill="none" stroke="#fff" stroke-width=".9"/>`
-          + `<text x="${PLATE.w / 2}" y="${(PLATE.h / 2 + PLATE.font * 0.36).toFixed(1)}" fill="#fff" font-size="${PLATE.font}" font-weight="500" text-anchor="middle">${st.s.founded}</text></g>`;
-      });
-      out += `<g aria-hidden="true" font-family="Readex Pro, system-ui, sans-serif">${plates}</g>`;
 
       const vx = minX - 10; const vy = minY - 10;
       const vw = maxX - minX + 20; const vh = cropY - vy;
@@ -208,36 +188,16 @@
       all[next].focus();
     });
 
-    // Draw once at desktop scale, then enlarge the year plates if the hill renders small.
-    let plateNow = null;
-    const fit = () => {
-      if (plateNow === null) draw(1);
-      const vb = svg.viewBox.baseVal;
-      const scale = vb && vb.width ? figure.clientWidth / vb.width : 1;
-      const plateScale = scale < 0.8 ? Math.min(2, 0.95 / scale) : 1;
-      if (plateNow !== null && Math.abs(plateScale - plateNow) < 0.05) return;
-      if (plateNow === null && plateScale === 1) { plateNow = 1; return; }
-      plateNow = plateScale;
-      draw(plateScale);
-    };
-    fit();
-    let resizeTimer;
-    window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(fit, 120); });
+    draw();
 
     // The hill builds itself, year by year.
     if (reduceMotion.matches || !Element.prototype.animate) return;
-    const plateEls = $$('.plate', svg);
     houses().forEach((h, i) => {
       const delay = 160 + i * 90;
       h.firstElementChild.animate(
         [{ transform: 'translateY(-30px)', opacity: 0 }, { transform: 'translateY(0)', opacity: 1 }],
         { duration: 640, delay, easing: 'cubic-bezier(.16, 1, .3, 1)', fill: 'backwards' },
       );
-      const plate = plateEls.find((p) => p.dataset.year === h.dataset.year);
-      if (plate && !plate.dataset.shown) {
-        plate.dataset.shown = '1';
-        plate.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 400, delay: delay + 260, easing: 'ease-out', fill: 'backwards' });
-      }
     });
   }
 

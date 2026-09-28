@@ -173,7 +173,7 @@ components:
 
 **Creative North Star: "Amman Hillside"**
 
-The industry is drawn as the city. Above, an open field of sky blue holds the title, the figures, and an isometric limestone hill where every studio is a house standing on the terrace of its founding year, its logo on a white rooftop sign and its year on a blue enamel street-name plate. Below, the page drops to street level: a pale stone ground where the directory lives as white cards. The footer returns to the sky, with the city's skyline on the horizon. Sections are stacked blocks of sky and stone; there are no divider rules between them.
+The industry is drawn as the city. Above, an open field of sky blue holds the title, the figures, and an isometric limestone hill where every studio is a house standing on the terrace of its founding year, with its logo on a white rooftop sign. Below, the page drops to street level: a pale stone ground where the directory lives as white cards. The footer returns to the sky, with the city's skyline on the horizon. Sections are stacked blocks of sky and stone; there are no divider rules between them.
 
 Navigation is signage. Every navigational control is a blue enamel street plate with an inset white rule, and the one item that is currently active turns taxi yellow. That is the whole accent vocabulary: blue says "this is a way to go", yellow says "you are here". The type is one family, Readex Pro, and hierarchy comes from size and weight alone.
 
@@ -194,7 +194,7 @@ A two-ground palette, sky blue over limestone and stone, with sign blue for wayf
 - **Amman Sky** (sky): the header and footer field and the `theme-color`. Everything on it is white. Never used as a text or button color on the stone ground.
 
 ### Secondary
-- **Enamel Sign Blue** (sign-blue): the street-sign plates (top nav, tabs, the hill's year plates), the filled "Visit website" pill on stone, text links on the stone ground (the information panel's values), the focus ring on stone, and the search caret. Hover lightens it to **Sign Blue, Lit** (sign-blue-hover).
+- **Enamel Sign Blue** (sign-blue): the street-sign plates (top nav and tabs), the filled "Visit website" pill on stone, text links on the stone ground (the information panel's values), the focus ring on stone, and the search caret. Hover lightens it to **Sign Blue, Lit** (sign-blue-hover).
 
 ### Tertiary
 - **Taxi Yellow** (taxi-yellow): the active tab, the active type-filter segment, and the ring that closes in on a card when the visitor arrives at it from a listing page or a deep link. It never appears on a listing page. Text on it is always ink. It never appears on hover, on decoration, or on anything inactive.
@@ -256,7 +256,7 @@ The page is three stacked blocks: sky (top bar and hero), street (the directory)
 - **Rhythm:** 10px between plates, 16px between cards and filter blocks, 32px between columns, 40px between the tabs and the board, 88px at the end of the street, and 64px of footer top padding over a 92px skyline strip.
 
 ### Named Rules
-**The One Drawing Rule.** The hill is a single composition at every width. It only scales. On small screens, the only change is that the year plates grow (up to 2x) and thin out where they would collide. The newest year always keeps its plate. Never re-lay out, crop into a different shape, or swap the hill for a mobile variant.
+**The One Drawing Rule.** The hill is a single composition at every width. It only scales. Never re-lay out, crop into a different shape, or swap the hill for a mobile variant.
 
 ## Elevation & Depth
 
@@ -315,7 +315,7 @@ Paper panels with a hairline border and 10px radius. They have a 16px/600 headin
 Ink, white 13px/500 text with the year at 300, 6px radius, padding 8px 11px, and a sky-cast shadow. It appears above a house only while it is hovered or focused, fading in over .12s, and is kept inside the screen edge. Nothing rests on the hill.
 
 ### The Hill (signature)
-An isometric SVG drawn in `js/shared.js` (unit 31px, 30° projection). There is one terrace per studio, stepping up the street by founding year, with a longer run where years pass without a new studio. Terraces rise from street level (z = 0), so their walls stay short and the hill's foot runs as one clean diagonal against the sky, as in the approved mockup (`.impeccable/mocks/decision/assigned.png`); never sink them below the street. A few empty years lengthen the terrace below them so the walls read as one slab; only an empty decade (2003 to 2013) opens a gap. Stone courses sit on the front risers only. Each terrace carries a limestone house with dark windows, a door on the shaded wall, a black water tank, and a white rooftop sign on a post that holds the studio's logo. Blue street-name plates (sign blue, inset white rule, 500 numerals) mark the first house of each year. Every house opens that studio's page in a new tab, so the visitor's place in the directory stays put. Hover or focus raises it 6px, focus draws a thick white frame around its sign, and arrow keys walk the street. In the directory, houses drop in one by one on entrance (−30px to 0, 640ms, 90ms stagger, ease-out-expo), and each year's plate fades in 260ms after its house. There is no resting label. None of the motion runs under reduced motion. The drawing lives in `js/shared.js` and is drawn only in the directory; listing pages do not carry it.
+An isometric SVG drawn in `js/shared.js` (unit 31px, 30° projection). There is one terrace per studio, stepping up the street by founding year, with a longer run where years pass without a new studio. Terraces rise from street level (z = 0), so their walls stay short and the hill's foot runs as one clean diagonal against the sky, as in the approved mockup (`.impeccable/mocks/decision/assigned.png`); never sink them below the street. A few empty years lengthen the terrace below them so the walls read as one slab; only an empty decade (2003 to 2013) opens a gap. Stone courses sit on the front risers only. Each terrace carries a limestone house with dark windows, a door on the shaded wall, a black water tank, and a white rooftop sign on a post that holds the studio's logo. Every house opens that studio's page in a new tab, so the visitor's place in the directory stays put. Hover or focus raises it 6px, focus draws a thick white frame around its sign, and arrow keys walk the street. In the directory, houses drop in one by one on entrance (−30px to 0, 640ms, 90ms stagger, ease-out-expo). There is no resting label. None of the motion runs under reduced motion. The drawing lives in `js/shared.js` and is drawn only in the directory; listing pages do not carry it.
 
 ### Listing page
 `listing.html?id=<slug>` renders one listing as a company profile, with the fields of the user's reference profile (gamecompanies.com, 2026-09-27): tagline, About, Games, company size, headquarters and address, people, platforms and social links. The directory facts come from `js/data.js`; the profile comes from `js/profiles.js`, keyed by the same slug and researched from public sources. A listing with no profile, or a field it lacks, shows fewer sections; nothing is filled in to make a page look complete.
@@ -338,7 +338,7 @@ The footer is sky with a repeating isometric skyline strip (1600 × 92px) in sky
 - **Do** use the out-expo easing (cubic-bezier(.16, 1, .3, 1)) for movement, keep hovers to 1–6px of rise, and cut all motion under prefers-reduced-motion.
 - **Do** keep "Add your studio" reachable in every view, empty results included; on listing pages, in the top bar and the side column's "Missing from the list?" note.
 - **Do** build every sentence and fact on a listing page from that listing's data (`js/data.js` and `js/profiles.js`), and omit a row or section rather than fill it with invented content.
-- **Do** scale the hill as one drawing. Only its year plates may grow and thin out on small screens.
+- **Do** scale the hill as one drawing on small screens.
 
 ### Don't:
 - **Don't** use taxi yellow for hover, emphasis, decoration, badges, or anything not currently active.
