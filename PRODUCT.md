@@ -32,7 +32,7 @@ A Jordan-only scope. Studios, publishers, and indie developers are all on one pa
 
 ## Brand Commitments
 
-- Name: "Jordan Game Companies" (user's choice).
+- Name: "Jordan Game Companies" (user's choice). The user replaced the site mark with the International Trade Centre logo on 2026-09-28.
 - The page idea comes from gamecompanies.com's industry pages: a title with headline figures, tabs, filters, and a grid of listing cards. On 2026-09-27 the user asked for "a better design than the original, with the same idea", so the original's look is not binding. They chose the "Amman Hillside" visual world in the direction round; DESIGN.md records it.
 
 ## Evidence on Hand
@@ -50,6 +50,6 @@ A Jordan-only scope. Studios, publishers, and indie developers are all on one pa
 ## Product Principles
 
 1. Every listing and figure traces back to the source, and every profile fact to a public source. Companies, jobs, events, and claims are never invented.
-2. The page stays faithful to the reference layout but keeps its own name and mark.
+2. The page stays faithful to the reference layout and keeps its own name.
 3. Each listing is one click from its own page on the site, and its website is one click from that page.
 4. The data is kept separate from the page, so real updates never touch markup.

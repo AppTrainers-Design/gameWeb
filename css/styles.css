@@ -95,23 +95,14 @@ h1, h2 { text-wrap: balance; }
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
   justify-self: start;
+  padding: 8px 10px;
+  background: var(--paper);
+  border-radius: 8px;
+  box-shadow: 0 8px 16px -10px rgba(8, 18, 48, .6);
   text-decoration: none;
 }
-.brand img {
-  width: 44px;
-  height: 44px;
-  border-radius: 11px;
-  box-shadow: 0 8px 16px -10px rgba(8, 18, 48, .6);
-}
-.brand__name {
-  display: block;
-  font-weight: 600;
-  font-size: 19px;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-}
+.brand img { width: 164px; height: auto; }
 
 .signs { display: flex; gap: 10px; }
 
@@ -763,9 +754,8 @@ h1, h2 { text-wrap: balance; }
   .topbar { grid-template-columns: minmax(0, 1fr) auto; row-gap: 16px; padding-top: 14px; }
   .signs { grid-column: 1 / -1; grid-row: 2; justify-content: center; }
   .sign { font-size: 13px; padding: 10px 13px; }
-  .brand { gap: 10px; }
-  .brand img { width: 38px; height: 38px; border-radius: 10px; }
-  .brand__name { font-size: 16px; }
+  .brand { padding: 6px 8px; }
+  .brand img { width: 140px; }
   .tabs { gap: 8px; margin-top: -24px; }
   .tab { font-size: 14px; gap: 7px; padding: 16px 13px; }
   .tab__long { display: none; }
