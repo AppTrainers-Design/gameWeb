@@ -10,10 +10,9 @@
   const TABS = {
     studios: { items: D.studios, label: 'studios & publishers', title: 'Studios & publishers', placeholder: 'Search studios' },
     indies: { items: D.indies, label: 'indie developers', title: 'Indie developers', placeholder: 'Search indies' },
-    universities: { items: D.universities, label: 'universities', title: 'Universities', placeholder: 'Search universities' },
   };
-  const ORDER = ['studios', 'indies', 'universities'];
-  const HASH = /^#(studios|indies|universities)(?:\/([\w-]+))?$/;
+  const ORDER = ['studios', 'indies'];
+  const HASH = /^#(studios|indies)(?:\/([\w-]+))?$/;
   const state = { tab: 'studios', kind: 'all', q: '' };
 
   const directory = $('#directory');
@@ -36,7 +35,7 @@
 
   /* ───────── Cards ───────── */
 
-  const haystack = (it) => [it.name, it.site, it.programme, it.type, it.kind, it.founded].concat(it.tags || []).filter(Boolean).join(' ').toLowerCase();
+  const haystack = (it) => [it.name, it.site, it.type, it.founded].concat(it.tags || []).filter(Boolean).join(' ').toLowerCase();
 
   function render() {
     const t = TABS[state.tab];
@@ -78,7 +77,7 @@
   tabs.forEach((b) => b.addEventListener('click', () => selectTab(b.dataset.tab)));
   $('[role="tablist"]').addEventListener('keydown', (e) => {
     const i = ORDER.indexOf(state.tab);
-    const next = { ArrowRight: (i + 1) % 3, ArrowLeft: (i + 2) % 3, Home: 0, End: 2 }[e.key];
+    const next = { ArrowRight: (i + 1) % ORDER.length, ArrowLeft: (i + ORDER.length - 1) % ORDER.length, Home: 0, End: ORDER.length - 1 }[e.key];
     if (next === undefined) return;
     e.preventDefault();
     selectTab(ORDER[next], { focus: true });
@@ -117,12 +116,12 @@
   clearButton.addEventListener('click', () => { setQuery(''); search.focus(); });
   $('[data-clear]').addEventListener('click', () => { setQuery(''); search.focus(); });
 
-  // 1–3 switch tabs, "/" jumps to search. Never while typing.
+  // 1–2 switch tabs, "/" jumps to search. Never while typing.
   document.addEventListener('keydown', (e) => {
     if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.altKey) return;
     if (e.target.closest && e.target.closest('input, textarea, select, [contenteditable="true"]')) return;
     if (e.key === '/') { e.preventDefault(); search.focus(); return; }
-    const i = ['1', '2', '3'].indexOf(e.key);
+    const i = ['1', '2'].indexOf(e.key);
     if (i > -1) selectTab(ORDER[i]);
   });
 

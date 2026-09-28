@@ -14,7 +14,6 @@
 // platforms: where its games run.
 // games:     [{ name, year?, blurb?, platforms?, url?, note? }]; url opens the game's store page.
 // social:    { instagram, x, facebook, linkedin, youtube, steam, itch, github, behance }.
-// Universities also take programme facts: degree, faculty, since.
 
 (function () {
   'use strict';
@@ -175,7 +174,7 @@
     madhook: {
       tagline: 'An independent studio with 100 million downloads, and the first Arab studio on PlayStation 5.',
       about: [
-        'Mad Hook is an independent game studio founded in Amman in 2018 by Hazim Al Hanbali and Ibrahim Al Hasan. It makes localised casual and mid-core games for mobile, PC and console, and grew its team of developers, artists and designers after joining The Core, the incubator at Al Hussein Technical University.',
+        'Mad Hook is an independent game studio founded in Amman in 2018 by Hazim Al Hanbali and Ibrahim Al Hasan. It makes localised casual and mid-core games for mobile, PC and console, and grew its team of developers, artists and designers.',
         'Its mobile hits The Chase, Highway Drifter and Rooftop Run have more than 50 million downloads between them, and the whole portfolio has passed 100 million. In 2019 it was picked for Google’s Indie Games Accelerator in Singapore from more than 1,700 applicants, and it is recognised as the first Arab studio to publish a game on PlayStation 5.',
       ],
       city: 'Amman',
@@ -452,64 +451,5 @@
       ],
     },
 
-    /* ───────── Universities ───────── */
-
-    // htu.edu.jo, TopUniversities.
-    htu: {
-      about: [
-        'Al Hussein Technical University (HTU) stands at the heart of King Hussein Business Park in Amman. It offers associate and bachelor’s degrees in applied engineering and computing through its schools of Engineering Technology, Computing and Informatics, Built Environment Engineering, and Social and Basic Sciences.',
-      ],
-      city: 'Amman',
-      address: 'King Hussein Business Park, Amman',
-      social: {
-        linkedin: 'https://www.linkedin.com/school/al-hussein-technical-university-htu/',
-      },
-    },
-
-    // jordan.sae.edu.
-    'sae-jordan': {
-      about: [
-        'SAE Institute Amman is the Jordan campus of the SAE creative media institute. It teaches games design and programming, and animation and visual effects, including the Diploma in Games Arts and Animation.',
-      ],
-      city: 'Amman',
-      address: 'Airport Road, Amman',
-      degree: 'Diploma',
-    },
-
-    // asu.edu.jo, TopUniversities, Wikipedia.
-    asu: {
-      about: [
-        'Applied Science Private University is a private university in Shafa Badran, in the north of Amman.',
-        'Its Extended Reality and Games Development programme began in the 2022–2023 academic year. It pairs the practical use of extended reality technologies with game development, to build new ways for people to interact with each other and with the world as digital media moves into immersive environments.',
-      ],
-      city: 'Amman',
-      address: 'Shafa Badran, Amman',
-      degree: 'Bachelor’s',
-      faculty: 'Faculty of Information Technology',
-      since: '2022–2023',
-    },
-
-    // yu.edu.jo, Petra News Agency.
-    'yarmouk-university': {
-      about: [
-        'Yarmouk University is a public university near the centre of Irbid in northern Jordan. Its Faculty of Information Technology and Computer Science has launched a new major in Digital Reality and Game Development.',
-        'Jordan’s Ministry of Digital Economy has signed an agreement with the university to set up a game design lab, equipped with the tools for designing and developing electronic games, and to run technical workshops and events there, so that students build practical skills that match the digital job market.',
-      ],
-      city: 'Irbid',
-      faculty: 'Faculty of Information Technology and Computer Science',
-    },
-
-    // psut.edu.jo, Wikipedia.
-    psut: {
-      about: [
-        'Princess Sumaya University for Technology (PSUT) is a private, non-profit university owned by the Royal Scientific Society, in El Hassan Science City in Amman.',
-        'Its Department of Computer Graphics and Animation, set up in 2006, offers a BSc that the university describes as unavailable at any other Jordanian university. Animation and video game courses are taught in its Rubicon Lab, set up with Rubicon Group Holding.',
-      ],
-      city: 'Amman',
-      address: 'El Hassan Science City, Amman',
-      degree: 'BSc',
-      faculty: 'King Hussein School of Computing Sciences',
-      since: '2006',
-    },
   };
 })();

@@ -3,7 +3,6 @@
 //
 // studios:      type is 'Studio' or 'Publisher'; tags are extra chips; founded feeds the timeline.
 // indies:       status 'soon' marks a developer the source lists as "coming soon" (no website yet).
-// universities: kind is the chip shown on the card.
 // logo:         the logo file name; it is also the listing's slug in URLs (listing.html?id=<logo>, #studios/<logo>).
 // tileBg:       set for logos drawn on their own solid plate (the colour of that plate). The hill
 //               draws these inset on its white rooftop signs; cards show every tile the same way.
@@ -43,13 +42,5 @@ window.JGC_DATA = {
     { name: 'Karaz', url: 'https://studio.karazjo.com', site: 'studio.karazjo.com', logo: 'karaz', tileBg: '#d9d9d9' },
     { name: 'Roxling', logo: 'roxling' },
     { name: 'Yume', url: 'https://yume-game.itch.io/', site: 'yume-game.itch.io', logo: 'yume' },
-  ],
-
-  universities: [
-    { name: 'Al Hussein Technical University (HTU)', programme: 'Game Design and Development', kind: 'University', url: 'https://www.htu.edu.jo/programs/game-design-and-development/', logo: 'htu' },
-    { name: 'SAE Institute Amman', programme: 'Diploma in Games Arts and Animation', kind: 'Institute', url: 'https://jordan.sae.edu', logo: 'sae-jordan' },
-    { name: 'Applied Science Private University (ASU)', programme: 'Extended Reality & Games Development Program', kind: 'University', url: 'https://www.asu.edu.jo/en/it/ER-GD/Pages/Overview.aspx', logo: 'asu' },
-    { name: 'Yarmouk University', programme: 'Digital Reality and Game Development Program', kind: 'University', url: 'https://it.yu.edu.jo/', logo: 'yarmouk-university' },
-    { name: 'Princess Sumaya University for Technology', programme: 'Computer Graphics and Animation', kind: 'University', url: 'https://www.psut.edu.jo/en/program/computer-graphics-and-animation-bsc', logo: 'psut' },
   ],
 };

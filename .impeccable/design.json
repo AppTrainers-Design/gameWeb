@@ -302,7 +302,7 @@
       },
       "meta": {
         "displayName": "Meta",
-        "purpose": "Card domains and programme lines, truncated."
+        "purpose": "Card domains, truncated."
       },
       "chip": {
         "displayName": "Chip",
@@ -395,7 +395,7 @@
       "kind": "nav",
       "refersTo": "sign-plate",
       "description": "Blue enamel street sign used for every navigational link on the sky.",
-      "html": "<div class=\"ds-sky\"><nav class=\"ds-signs\"><a class=\"ds-sign\" href=\"#\">Studios</a><a class=\"ds-sign\" href=\"#\">Indie devs</a><a class=\"ds-sign\" href=\"#\">Universities</a></nav></div>",
+      "html": "<div class=\"ds-sky\"><nav class=\"ds-signs\"><a class=\"ds-sign\" href=\"#\">Studios</a><a class=\"ds-sign\" href=\"#\">Indie devs</a></nav></div>",
       "css": ".ds-sky{background:#2f6be5;padding:24px}.ds-signs{display:flex;gap:10px}.ds-sign{position:relative;display:inline-flex;align-items:center;background:#1b4ba8;color:#fff;font-family:'Readex Pro',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:500;font-size:14px;line-height:1;text-decoration:none;padding:11px 16px;border-radius:6px;border:0;box-shadow:0 8px 16px -11px rgba(8,18,48,.7);transition:background-color .15s ease,transform .2s cubic-bezier(.16,1,.3,1);cursor:pointer}.ds-sign::after{content:'';position:absolute;inset:3px;border:1.5px solid rgba(255,255,255,.92);border-radius:4px;pointer-events:none}.ds-sign:hover{background:#2357bf}.ds-sign:active{transform:translateY(1px)}.ds-sign:focus-visible{outline:2px solid #fff;outline-offset:3px}"
     },
     {
@@ -403,7 +403,7 @@
       "kind": "nav",
       "refersTo": "tab",
       "description": "Large sign plates straddling the sky edge; the selected tab turns taxi yellow.",
-      "html": "<div class=\"ds-edge\"><div class=\"ds-tabs\" role=\"tablist\"><button class=\"ds-tab\" role=\"tab\" aria-selected=\"true\">Studios &amp; publishers <span class=\"ds-count\">12</span></button><button class=\"ds-tab\" role=\"tab\" aria-selected=\"false\">Indie developers <span class=\"ds-count\">14</span></button><button class=\"ds-tab\" role=\"tab\" aria-selected=\"false\">Universities <span class=\"ds-count\">5</span></button></div></div>",
+      "html": "<div class=\"ds-edge\"><div class=\"ds-tabs\" role=\"tablist\"><button class=\"ds-tab\" role=\"tab\" aria-selected=\"true\">Studios &amp; publishers <span class=\"ds-count\">12</span></button><button class=\"ds-tab\" role=\"tab\" aria-selected=\"false\">Indie developers <span class=\"ds-count\">14</span></button></div></div>",
       "css": ".ds-edge{background:linear-gradient(#2f6be5 50%,#f7f8fa 50%);padding:0 24px}.ds-tabs{display:flex;flex-wrap:wrap;gap:10px}.ds-tab{position:relative;display:inline-flex;align-items:center;gap:10px;appearance:none;border:0;margin:0;background:#1b4ba8;color:#fff;font-family:'Readex Pro',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:500;font-size:15px;line-height:1;padding:18px 20px;border-radius:6px;cursor:pointer;box-shadow:0 12px 20px -12px rgba(8,18,48,.7);transition:background-color .15s ease,transform .2s cubic-bezier(.16,1,.3,1)}.ds-tab::after{content:'';position:absolute;inset:4px;border:1.5px solid rgba(255,255,255,.92);border-radius:4px;pointer-events:none}.ds-tab:hover{background:#2357bf}.ds-tab:active{transform:translateY(1px)}.ds-tab[aria-selected=true]{background:#ffc61a;color:#16181d}.ds-tab[aria-selected=true]::after{border-color:rgba(22,24,29,.85)}.ds-tab:focus-visible{outline:2px solid #16181d;outline-offset:3px}.ds-count{font-weight:300;font-variant-numeric:tabular-nums}"
     },
     {
@@ -481,7 +481,7 @@
   ],
   "narrative": {
     "northStar": "Amman Hillside",
-    "overview": "The industry is drawn as the city. Above, an open field of sky blue holds the title, the figures, and an isometric limestone hill where every studio is a house standing on the terrace of its founding year, its logo on a white rooftop sign and its year on a blue enamel street-name plate. Below, the page drops to street level: a pale stone ground where the directory lives as white cards. The footer returns to the sky, with the city's skyline on the horizon. Sections are stacked blocks of sky and stone; there are no divider rules between them.\n\nNavigation is signage. Every navigational control is a blue enamel street plate with an inset white rule, and the one item that is currently active turns taxi yellow. That is the whole accent vocabulary: blue says \"this is a way to go\", yellow says \"you are here\". The type is one family, Readex Pro, and hierarchy comes from size and weight alone.\n\nThe density is calm and operational: 31 listings across three tabs, readable at a glance, each one click from its own page on the site. That page is a company profile with no hero: the sky is only its top bar and its footer, and everything between them (breadcrumb, framed logo tile, name, facts, and more of the category) stands on stone. The hill is the only illustration, it appears only in the directory, and it is one fixed drawing, approved by the user as it stands; it scales with its container and never reflows into a different composition.",
+    "overview": "The industry is drawn as the city. Above, an open field of sky blue holds the title, the figures, and an isometric limestone hill where every studio is a house standing on the terrace of its founding year, its logo on a white rooftop sign and its year on a blue enamel street-name plate. Below, the page drops to street level: a pale stone ground where the directory lives as white cards. The footer returns to the sky, with the city's skyline on the horizon. Sections are stacked blocks of sky and stone; there are no divider rules between them.\n\nNavigation is signage. Every navigational control is a blue enamel street plate with an inset white rule, and the one item that is currently active turns taxi yellow. That is the whole accent vocabulary: blue says \"this is a way to go\", yellow says \"you are here\". The type is one family, Readex Pro, and hierarchy comes from size and weight alone.\n\nThe density is calm and operational: 26 listings across two tabs, readable at a glance, each one click from its own page on the site. That page is a company profile with no hero: the sky is only its top bar and its footer, and everything between them (breadcrumb, framed logo tile, name, facts, and more of the category) stands on stone. The hill is the only illustration, it appears only in the directory, and it is one fixed drawing, approved by the user as it stands; it scales with its container and never reflows into a different composition.",
     "keyCharacteristics": [
       "Two grounds: sky (#2f6be5) above and in the footer, stone (#f7f8fa) at street level between them.",
       "Blue enamel sign plates for every navigational control; taxi yellow only on the active item.",

@@ -7,14 +7,14 @@ related_targets: ["index.html"]
 
 ## Scope
 
-`listing.html?id=<slug>` is one listing's own page. Every studio, publisher, indie developer, and university card in the directory opens here, and so does every house on the hill. Visitor mode: **Operate**. The visitor confirms who the listing is, then leaves for its website or moves on to a neighbour.
+`listing.html?id=<slug>` is one listing's own page. Every studio, publisher, and indie developer card in the directory opens here, and so does every house on the hill. Visitor mode: **Operate**. The visitor confirms who the listing is, then leaves for its website or moves on to a neighbour.
 
 ## Audience, job, content
 
 - Audience: the same as the directory's.
-- Job: identify the listing and see its type, founding year, or programme. Then open its website, or browse listings near it.
+- Job: identify the listing and see its type and, for studios, founding year. Then open its website, or browse listings near it.
 - Content: the listing's fields in `js/data.js` plus its profile in `js/profiles.js`: tagline, About, games, company size, headquarters and address, people, platforms and social links. On 2026-09-27 the user asked for the internal pages to carry all the data of a gamecompanies.com company profile (their example: 22cans) in this site's design, replacing the earlier "source facts only" choice. Profiles are researched from public sources; nothing is invented, and a field with no confirmed data is left out.
-- Constraints: static HTML/CSS/JS, English only. All 31 listings have a page. In the directory, cards and hill houses open it in a new tab (the user's answer, 2026-09-27). On the page, links to other listings stay in that tab. The breadcrumb's category link returns to the lit card in the directory. The reference's About, Games, company-size and address fields are filled from `js/profiles.js` where a public source confirms them.
+- Constraints: static HTML/CSS/JS, English only. All 26 listings have a page. In the directory, cards and hill houses open it in a new tab (the user's answer, 2026-09-27). On the page, links to other listings stay in that tab. The breadcrumb's category link returns to the lit card in the directory. The reference's About, Games, company-size and address fields are filled from `js/profiles.js` where a public source confirms them.
 
 ## Direction contract
 

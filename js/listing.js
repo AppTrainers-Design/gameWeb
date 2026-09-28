@@ -12,7 +12,6 @@
   const GROUP = {
     studios: { title: 'Studios & publishers', label: 'studios & publishers' },
     indies: { title: 'Indie developers', label: 'indie developers' },
-    universities: { title: 'Universities', label: 'universities' },
   };
   const MORE = 6;
   const GAMES = 6; // games shown before "Show all", once there are more than GAMES_ALL
@@ -71,8 +70,7 @@
 
   const metaParts = (tab, it, p) => {
     if (tab === 'studios') return [typeLabel(it), `Founded ${it.founded}`, place(p)];
-    if (tab === 'indies') return ['Indie developer', place(p)];
-    return [it.kind, place(p)];
+    return ['Indie developer', place(p)];
   };
 
   /* ───────── Information panel ───────── */
@@ -100,19 +98,11 @@
   function facts(tab, it, p) {
     const link = it.url ? `<a href="${esc(it.url)}" target="_blank" rel="noopener">${breakable(where(it))}${EXT}</a>` : '';
     const rows = [];
-    if (tab === 'universities') {
-      rows.push(['Programme', esc(it.programme)], ['Programme page', link || none('Not listed')]);
-      if (p.degree) rows.push(['Degree', esc(p.degree)]);
-      if (p.faculty) rows.push(['Faculty', esc(p.faculty)]);
-      if (p.since) rows.push(['Running since', esc(p.since)]);
-      rows.push(['Type', esc(it.kind)]);
-    } else {
-      rows.push(['Website', link || none(it.status === 'soon' ? 'Coming soon' : 'Not listed')]);
-      rows.push(['Type', tab === 'studios' ? esc(typeLabel(it)) : 'Indie developer']);
-      if (tab === 'studios') rows.push(['Founded', String(it.founded)]);
-      if (p.size) rows.push(['Company size', `${esc(p.size)} employees`]);
-    }
-    rows.push([tab === 'universities' ? 'Location' : 'Headquarters', esc(place(p))]);
+    rows.push(['Website', link || none(it.status === 'soon' ? 'Coming soon' : 'Not listed')]);
+    rows.push(['Type', tab === 'studios' ? esc(typeLabel(it)) : 'Indie developer']);
+    if (tab === 'studios') rows.push(['Founded', String(it.founded)]);
+    if (p.size) rows.push(['Company size', `${esc(p.size)} employees`]);
+    rows.push(['Headquarters', esc(place(p))]);
     if (p.address) rows.push(['Address', addressHTML(p.address)]);
     if (p.offices && p.offices.length) rows.push([p.offices.length > 1 ? 'Other offices' : 'Other office', p.offices.map((o) => `<span class="facts__line">${esc(o)}</span>`).join('')]);
     if (p.platforms && p.platforms.length) rows.push(['Platforms', esc(p.platforms.join(', '))]);
@@ -124,11 +114,10 @@
   }
 
   // The one way out to the listing's own site.
-  function visit(tab, it) {
+  function visit(it) {
     if (!it.url) return '';
     let label = 'Visit website';
-    if (tab === 'universities') label = 'View the programme';
-    else if (it.site && !isDomain(it.site)) label = `Open on ${it.site}`;
+    if (it.site && !isDomain(it.site)) label = `Open on ${it.site}`;
     return `<a class="btn-visit" href="${esc(it.url)}" target="_blank" rel="noopener">${esc(label)}`
       + `<svg aria-hidden="true"><use href="#i-ext"/></svg><span class="vh"> (opens ${esc(where(it))} in a new tab)</span></a>`;
   }
@@ -141,7 +130,7 @@
     if (s) paras.push(`<p class="about__standing">${s}</p>`);
     if (!paras.length) return;
     const section = $('[data-about]');
-    $('[data-about-title]').textContent = tab === 'universities' ? 'About' : `About ${it.name}`;
+    $('[data-about-title]').textContent = `About ${it.name}`;
     section.insertAdjacentHTML('beforeend', paras.join(''));
     section.hidden = false;
   }
@@ -208,7 +197,7 @@
       + `<div class="profile__id"><h1 tabindex="-1">${esc(it.name)}</h1>`
       + (p.tagline ? `<p class="profile__tag">${esc(p.tagline)}</p>` : '')
       + `<p class="profile__meta">${metaParts(tab, it, p).map(esc).join('<span aria-hidden="true"> · </span>')}</p></div>`
-      + `<div class="profile__act">${visit(tab, it)}</div>`;
+      + `<div class="profile__act">${visit(it)}</div>`;
 
     renderAbout(tab, it, p);
     renderGames(it, p);

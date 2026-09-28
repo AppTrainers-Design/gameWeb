@@ -14,7 +14,7 @@
 
   // A listing's slug is its logo name; it addresses both its page and its card (#studios/<slug>).
   const listingHref = (it) => `listing.html?id=${encodeURIComponent(it.logo)}`;
-  const TYPES = ['studios', 'indies', 'universities'];
+  const TYPES = ['studios', 'indies'];
   function findListing(slug) {
     for (const tab of TYPES) {
       const it = D[tab].find((x) => x.logo === slug);
@@ -33,12 +33,10 @@
   const META = {
     studios: (it) => ({ text: it.site }),
     indies: (it) => ({ text: it.site || (it.status === 'soon' ? 'Website coming soon' : 'No website listed') }),
-    universities: (it) => ({ text: it.programme, wrap: true }),
   };
   const CHIPS = {
     studios: (it) => [typeLabel(it), { year: it.founded }],
     indies: (it) => (it.status === 'soon' ? ['Indie', { soon: 'Coming soon' }] : ['Indie']),
-    universities: (it) => [it.kind],
   };
   const chipHTML = (c) => {
     if (c.year) return `<span class="chip chip--year"><svg aria-hidden="true"><use href="#i-house"/></svg><span class="vh">Founded </span>${c.year}</span>`;
@@ -54,7 +52,7 @@
     return `<li><a class="card" id="${tab}-${esc(it.logo)}" href="${esc(listingHref(it))}"${tabAttrs(newTab)}>`
       + `<span class="card__logo"><img src="${logoSrc(it.logo)}" alt="" width="76" height="76" loading="lazy" decoding="async"></span>`
       + `<span class="card__body"><span class="card__name">${esc(it.name)}</span>`
-      + `<span class="card__meta${meta.wrap ? ' card__meta--wrap' : ''}">${esc(meta.text)}</span>`
+      + `<span class="card__meta">${esc(meta.text)}</span>`
       + `<span class="card__chips">${chips}</span></span>`
       + '<svg class="card__go" aria-hidden="true"><use href="#i-go"/></svg>'
       + `${newTab ? '<span class="vh"> (opens in a new tab)</span>' : ''}</a></li>`;
