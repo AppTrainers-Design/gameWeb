@@ -92,20 +92,14 @@ spacing:
   street-end: "88px"
   gutter: "clamp(16px, 4.4vw, 64px)"
 components:
-  sign-plate:
-    backgroundColor: "{colors.sign-blue}"
-    textColor: "{colors.paper}"
-    typography: "{typography.label}"
-    rounded: "{rounded.plate}"
-    padding: "11px 16px"
-  sign-plate-hover:
-    backgroundColor: "{colors.sign-blue-hover}"
   tab:
     backgroundColor: "{colors.sign-blue}"
     textColor: "{colors.paper}"
     typography: "{typography.label}"
     rounded: "{rounded.plate}"
     padding: "18px 20px"
+  tab-hover:
+    backgroundColor: "{colors.sign-blue-hover}"
   tab-active:
     backgroundColor: "{colors.crimson}"
     textColor: "{colors.paper}"
@@ -194,7 +188,7 @@ A two-ground palette, sky blue over limestone and stone. Wayfinding, links and t
 - **Amman Sky** (sky): the header and footer field and the `theme-color`. Everything on it is white. Never used as a text or button color on the stone ground.
 
 ### Secondary
-- **ITC Navy** (sign-blue): the logo's navy, exactly. The street-sign plates (top nav and tabs), the filled "Visit website" pill on stone, the focus ring on stone, and the search caret. Hover lightens it toward the logo blue: **ITC Navy, Lit** (sign-blue-hover).
+- **ITC Navy** (sign-blue): the logo's navy, exactly. The street-sign plates (the tabs), the filled "Visit website" pill on stone, the focus ring on stone, and the search caret. Hover lightens it toward the logo blue: **ITC Navy, Lit** (sign-blue-hover).
 - **ITC Blue** (link-blue): the logo's #3e9ad5, deepened until it clears 5:1 on stone. Text links on stone and paper (the About text, the profile line, the information panel's values, the "All N" link), and the hover color of breadcrumb links, linked game names, card and game arrows, and social marks.
 
 ### Tertiary
@@ -234,7 +228,7 @@ The hill is lit from the upper left. Houses use paper for the lit top, **Limesto
 - **Headline** (500, 18px): the empty-state title.
 - **Title** (600, 16px): note and footer headings. Card names use the same size at 500 and 1.3 line-height.
 - **Body** (400, 16px, 1.5): running text. Notes use 14px on ink-muted.
-- **Label** (500, 15px, line-height 1): tabs (14px on mobile), sign plates (14px, 13px on mobile), the pills (600, 15px). The breadcrumb on stone is 14px/1.4, its current crumb 500 in ink.
+- **Label** (500, 15px, line-height 1): tabs (14px on mobile), the pills (600, 15px). The breadcrumb on stone is 14px/1.4, its current crumb 500 in ink.
 - **Meta** (400, 13px, 1.45): card domains, truncated to one line. The information panel's labels use the same 13px in ink-faint; its values are 15px/500.
 - **Chip** (500, 12px, line-height 1): type and year chips, with tabular numerals.
 
@@ -249,7 +243,7 @@ Weight 300 is the whisper weight. It is used for tab counts, the tooltip's year,
 
 The page is three stacked blocks: sky (top bar and hero), street (the directory), and sky again (footer). The horizontal gutter is fluid (gutter, clamp(16px, 4.4vw, 64px)) and applies to all three blocks.
 
-- **Top bar:** a three-column grid (brand left, sign nav centred, "Add your studio" pill right). At 720px and below, the signs drop to a centred second row.
+- **Top bar:** the International Trade Centre logo alone, on the left, linking home. There is no top navigation; the tabs, the hero's links, the breadcrumb and the footer carry it.
 - **Hero:** two columns, copy and hill (1fr : 1.08fr), minimum height min(520px, 100svh − 150px). The hill is bottom-aligned so its foot is cropped by the street edge; it caps at 640px wide. At 1000px and below, the hero becomes one column with the hill full-width under the copy.
 - **Tabs straddle the edge:** the tab row is pulled up (-27px, -24px on mobile) so the plates sit half on the sky and half on the street. This overlap is the join between the two grounds.
 - **Board:** a 232px sticky filter column and a results column (column gap 32px, 40px below the tabs). Cards run three across, two below 1240px, and one below 720px, with 16px gaps (12px on mobile). At 1000px and below, the filters become a wrapping row above the results, and the "Missing from the list?" note moves below them.
@@ -266,24 +260,21 @@ Depth comes from the isometric drawing and from soft, downward cast shadows unde
 ### Shadow Vocabulary
 - **Card rest** (`box-shadow: 0 12px 24px -16px rgba(22, 24, 29, .38)`): listing cards, the information panel, the listing page's framed logo tile, and the Visit pill at rest on stone.
 - **Card lift** (`box-shadow: 0 20px 32px -18px rgba(22, 24, 29, .45)`): a linked card on hover, together with a 2px rise; the Visit pill on hover, with a 1px rise.
-- **Sky cast** (`box-shadow: 0 12px 20px -12px rgba(8, 18, 48, .7)`): tabs, sign plates, the "Add your studio" pill, and the tooltip, which are objects standing on or over the sky.
+- **Sky cast** (`box-shadow: 0 12px 20px -12px rgba(8, 18, 48, .7)`): tabs, the "Add your studio" pill, and the tooltip, which are objects standing on or over the sky.
 
 ### Named Rules
 **The Contact Shadow Rule.** Every shadow falls straight down, with its spread negative enough that it stays inside the object's footprint. No zero-blur offsets and no colored glows.
 
 ## Shapes
 
-Corners are softly rounded and scale with object size. Sign plates are 6px, with an inner white rule inset 3–4px at 4px radius. Fields, segments, and logo tiles are 8px. Cards and notes are 10px. The International Trade Centre logo sits directly on the blue sky in the header and footer, with its wordmark rendered white for contrast. The listing page's logo is the one large tile: 116px at a 12px radius with a hairline ring, inside a 6px paper frame with a 1px hairline border at 18px (80px, 10px, 5px and 15px on mobile). Anything that is an action rather than a place is a full pill (999px): the "Add your studio" CTA, the "Visit website" pill, chips, and the quiet button. In cards, logos always sit on the same 76px tile with an 8px radius and a 1px hairline ring, whatever their native shape. The breadcrumb's chevrons are drawn in CSS (two 1.5px borders on a 6px square, rotated), not glyphs. The hill's rooftop signs are white squares with a 3px radius and an ink stroke.
+Corners are softly rounded and scale with object size. Tab plates are 6px, with an inner white rule inset 4px at 4px radius. Fields, segments, and logo tiles are 8px. Cards and notes are 10px. The International Trade Centre logo sits directly on the blue sky in the header and footer, with its wordmark rendered white for contrast. The listing page's logo is the one large tile: 116px at a 12px radius with a hairline ring, inside a 6px paper frame with a 1px hairline border at 18px (80px, 10px, 5px and 15px on mobile). Anything that is an action rather than a place is a full pill (999px): the "Add your studio" CTA, the "Visit website" pill, chips, and the quiet button. In cards, logos always sit on the same 76px tile with an 8px radius and a 1px hairline ring, whatever their native shape. The breadcrumb's chevrons are drawn in CSS (two 1.5px borders on a 6px square, rotated), not glyphs. The hill's rooftop signs are white squares with a 3px radius and an ink stroke.
 
 The header and footer use the full International Trade Centre logo on transparent blue sky: the multicolored mark stays intact and the wordmark is white. Its mark alone is the browser icon. Its navy, blue and crimson are the site's wayfinding, link and active colors.
 
 ## Components
 
-### Sign plates (top nav)
-Navy enamel street signs. ITC navy, white 500 label, 6px radius, padding 11px 16px, sky-cast shadow, and a 1.5px inset white rule (rgba(255,255,255,.92)) at 3px. Hover lightens to sign-blue-hover. Active presses down 1px.
-
 ### Tabs
-The same sign plate, larger (padding 18px 20px, rule inset 4px), with the count in weight 300. The selected tab turns crimson; its text and inset rule stay white. Arrow keys, Home, End, and keys 1–2 switch tabs, and each tab has a hash (#studios, #indies). On mobile, labels shorten ("Studios", "Indies").
+Navy enamel street signs, the site's only sign plates. ITC navy, white 500 15px label, 6px radius, padding 18px 20px, sky-cast shadow, and a 1.5px inset white rule (rgba(255,255,255,.92)) at 4px, with the count in weight 300. Hover lightens to sign-blue-hover. Active presses down 1px. The selected tab turns crimson; its text and inset rule stay white. Arrow keys, Home, End, and keys 1–2 switch tabs, and each tab has a hash (#studios, #indies). On mobile, labels shorten ("Studios", "Indies").
 
 ### "Add your studio" pill
 A white pill on the sky with sign-blue 600 text, padding 14px 22px, an external-link icon, and a sky-cast shadow. Hover rises 1px and the shadow deepens. In the directory it is present in every view: top bar, the side or after note, the empty state, and the footer. On a listing page it is in the top bar, and the side column's "Missing from the list?" note carries the register link.

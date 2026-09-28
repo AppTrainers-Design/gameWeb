@@ -313,7 +313,7 @@
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Tabs, sign plates, and the pills (600)."
+        "purpose": "Tabs and the pills (600)."
       },
       "meta": {
         "displayName": "Meta",
@@ -346,7 +346,7 @@
       {
         "name": "sky-cast",
         "value": "0 12px 20px -12px rgba(8, 18, 48, .7)",
-        "purpose": "Tabs, sign plates, the Add your studio pill, the mark, and the tooltip: objects over the sky."
+        "purpose": "Tabs, the Add your studio pill, the mark, and the tooltip: objects over the sky."
       }
     ],
     "motion": [
@@ -406,14 +406,6 @@
   },
   "components": [
     {
-      "name": "Sign Plate",
-      "kind": "nav",
-      "refersTo": "sign-plate",
-      "description": "Navy enamel street sign used for every navigational link on the sky.",
-      "html": "<div class=\"ds-sky\"><nav class=\"ds-signs\"><a class=\"ds-sign\" href=\"#\">Studios</a><a class=\"ds-sign\" href=\"#\">Indie devs</a></nav></div>",
-      "css": ".ds-sky{background:#2f6be5;padding:24px}.ds-signs{display:flex;gap:10px}.ds-sign{position:relative;display:inline-flex;align-items:center;background:#132e50;color:#fff;font-family:'Readex Pro',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:500;font-size:14px;line-height:1;text-decoration:none;padding:11px 16px;border-radius:6px;border:0;box-shadow:0 8px 16px -11px rgba(8,18,48,.7);transition:background-color .15s ease,transform .2s cubic-bezier(.16,1,.3,1);cursor:pointer}.ds-sign::after{content:'';position:absolute;inset:3px;border:1.5px solid rgba(255,255,255,.92);border-radius:4px;pointer-events:none}.ds-sign:hover{background:#1c446b}.ds-sign:active{transform:translateY(1px)}.ds-sign:focus-visible{outline:2px solid #fff;outline-offset:3px}"
-    },
-    {
       "name": "Tabs",
       "kind": "nav",
       "refersTo": "tab",
@@ -468,14 +460,6 @@
       "description": "A card reached from a listing page's breadcrumb or Listed in link, or a deep link: a crimson ring closes in.",
       "html": "<div class=\"ds-lit\">Kenda AI</div>",
       "css": ".ds-lit{width:260px;padding:24px;background:#fff;border:1px solid #dde3ec;border-radius:10px;font-family:'Readex Pro',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:500;outline:3px solid #dd0957;outline-offset:3px;animation:ds-lit .7s cubic-bezier(.16,1,.3,1) infinite alternate}@keyframes ds-lit{from{outline-offset:16px;outline-color:rgba(221,9,87,0)}to{outline-offset:3px;outline-color:#dd0957}}"
-    },
-    {
-      "name": "Year Plate",
-      "kind": "custom",
-      "refersTo": "sign-plate",
-      "description": "The hill's street-name plate carrying a founding year.",
-      "html": "<svg class=\"ds-plate\" width=\"76\" height=\"32\" viewBox=\"0 0 38 16\"><rect width=\"38\" height=\"16\" rx=\"2.5\" fill=\"#132e50\"/><rect x=\"2\" y=\"2\" width=\"34\" height=\"12\" rx=\"1.5\" fill=\"none\" stroke=\"#fff\" stroke-width=\".9\"/><text x=\"19\" y=\"11.2\" fill=\"#fff\" font-size=\"9\" font-weight=\"500\" text-anchor=\"middle\" font-family=\"Readex Pro, system-ui, sans-serif\">2013</text></svg>",
-      "css": ".ds-plate{display:block}"
     },
     {
       "name": "Quiet Button",
